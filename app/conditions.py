@@ -10,7 +10,7 @@ class AreaLevel(Condition):
     def __init__(
         self,
         value: int,
-        operator: OPERATOR = OPERATOR.LTE,
+        operator: OPERATOR = OPERATOR.GTE,
     ):
         self.value = value
         self.operator = operator

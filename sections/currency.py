@@ -7,8 +7,8 @@ config = [
     # Basic currency
     {"name": "Orb of Transmutation", "tier": TIER.COMMON},
     {"name": "Orb of Augmentation", "tier": TIER.COMMON},
-    {"name": "Orb of Alchemy", "tier": TIER.RARE},
-    {"name": "Orb of Chance", "tier": TIER.RARE},
+    {"name": "Orb of Alchemy", "tier": TIER.COMMON},
+    {"name": "Orb of Chance", "tier": TIER.COMMON},
     {"name": "Regal Orb", "tier": TIER.COMMON},
     {"name": "Exalted Orb", "tier": TIER.COMMON},
     {"name": "Orb of Annulment", "tier": TIER.COMMON},
@@ -52,7 +52,7 @@ config = [
     {"name": "Distilled Despair", "tier": TIER.COMMON},
     {"name": "Distilled Disgust", "tier": TIER.COMMON},
     {"name": "Distilled Greed", "tier": TIER.COMMON},
-    {"name": "Distilled Guiltœ", "tier": TIER.COMMON},
+    {"name": "Distilled Guilt", "tier": TIER.COMMON},
     {"name": "Distilled Ire", "tier": TIER.COMMON},
     {"name": "Distilled Paranoia", "tier": TIER.COMMON},
     {"name": "Distilled Suffering", "tier": TIER.COMMON},
@@ -73,6 +73,7 @@ config = [
     {"name": "Soul Core of Thunder", "tier": TIER.COMMON},
     {"name": "Soul Core of Ticaba", "tier": TIER.COMMON},
     {"name": "Soul Core of Topotante", "tier": TIER.COMMON},
+    # Trial of the Sekhema currency
 ]
 
 rules = [Show([BaseType(item["name"]), TierStyle(item["tier"])]) for item in config]

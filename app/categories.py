@@ -108,8 +108,42 @@ class OPERATOR(StrEnum):
     EXACT = "=="
 
 
-# TODO list individually
-# TODO one hand vs two hand
-# TODO other gear classes
-class WEAPONS(StrEnum):
-    pass
+class WEAPON(StrEnum):
+    BOW = "Bows"
+    CLAW = "Claws"
+    CROSSBOW = "Crossbows"
+    DAGGER = "Daggers"
+    FISHING_ROD = "Fishing Rods"
+    FLAIL = "Flails"
+    ONE_HAND_AXE = "One Hand Axes"
+    ONE_HAND_MACE = "One Hand Maces"
+    ONE_HAND_SWORD = "One Hand Swords"
+    RUNE_DAGGER = "Rune Daggers"
+    SCEPTRE = "Sceptres"
+    STAFF = "Staves"
+    TWO_HAND_AXE = "Two Hand Axes"
+    TWO_HAND_MACE = "Two Hand Maces"
+    TWO_HAND_SWORD = "Two Hand Swords"
+    WAND = "Wands"
+
+
+class GEAR(StrEnum):
+    AMULET = "Amulets"
+    BELT = "Belts"
+    BODY_ARMOUR = "Body Armours"
+    BOOTS = "Boots"
+    GLOVES = "Gloves"
+    HELMET = "Helmets"
+    RING = "Rings"
+
+
+class CHARM(StrEnum):
+    ANTIDOTE_CHARM = "Antidote Charm"
+    DOUSING_CHARM = "Dousing Charm"
+    RUBY_CHARM = "Ruby Charm"
+    SAPPHIRE_CHARM = "Sapphire Charm"
+    SILVER_CHARM = "Silver Charm"
+    STAUNCHING_CHARM = "Staunching Charm"
+    STONE_CHARM = "Stone Charm"
+    THAWING_CHARM = "Thawing Charm"
+    TOPAZ_CHARM = "Topaz Charm"

@@ -10,17 +10,42 @@ import os
 import datetime
 
 from app import formatting
+from app.blocks import Block, Hide, Show
+from app.actions import TierStyle
+from app.categories import TIER
 
 FILTER_EXTENSION = "filter"
 RUTHLESS_EXTENSION = "ruthlessfilter"
 FILTER_OUTPUT_PATH = "C:\\Users\\matth\\Documents\\my games\\Path of Exile"
+FILTER_OUTPUT_PATH = "."
 
 
-def sort_rules(rules):
-    """Sort by importance based on TierStyle, all hide blocks go last"""
-    print(type(rules[0]))
-    print(type(rules[1]))
-    return rules
+def sort_by_tierstyle(a: Block):
+    """Sort by importance based on TierStyle"""
+    tier = None
+    for condition in a.conditions:
+        if isinstance(condition, TierStyle):
+            tier = condition.tier
+            break
+
+    tier_to_order = {
+        TIER.LEGENDARY: 0,
+        TIER.EPIC: 1,
+        TIER.RARE: 2,
+        TIER.COMMON: 3,
+        None: 4,
+    }
+
+    return tier_to_order[tier]
+
+
+def sort_rules(rules: list[Block]):
+    """Put Show blocks first and Hide blocks last, within each group sort by TierStyle"""
+    show_rules = [rule for rule in rules if isinstance(rule, Show)]
+    hide_rules = [rule for rule in rules if isinstance(rule, Hide)]
+    show_rules.sort(key=sort_by_tierstyle)
+    hide_rules.sort(key=sort_by_tierstyle)
+    return [*show_rules, *hide_rules]
 
 
 def generate(*, rules, filter_name, is_ruthless=False):
