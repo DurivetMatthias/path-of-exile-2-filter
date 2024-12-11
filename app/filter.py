@@ -16,8 +16,7 @@ from app.categories import TIER
 
 FILTER_EXTENSION = "filter"
 RUTHLESS_EXTENSION = "ruthlessfilter"
-FILTER_OUTPUT_PATH = "C:\\Users\\matth\\Documents\\my games\\Path of Exile"
-FILTER_OUTPUT_PATH = "."
+FILTER_OUTPUT_PATH = "C:\\Users\\matth\\Documents\\my games\\Path of Exile 2"
 
 
 def sort_by_tierstyle(a: Block):

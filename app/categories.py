@@ -118,7 +118,6 @@ class WEAPON(StrEnum):
     ONE_HAND_AXE = "One Hand Axes"
     ONE_HAND_MACE = "One Hand Maces"
     ONE_HAND_SWORD = "One Hand Swords"
-    RUNE_DAGGER = "Rune Daggers"
     SCEPTRE = "Sceptres"
     SPEAR = "Spears"
     STAFF = "Staves"
