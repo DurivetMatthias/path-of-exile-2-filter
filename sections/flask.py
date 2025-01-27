@@ -1,27 +1,24 @@
 from app.actions import TierStyle
-from app.conditions import AreaLevel, MultiClass, MultiBaseType
+from app.conditions import MultiClass, MultiBaseType
 from app.blocks import Hide, Show
-from app.categories import OPERATOR, TIER
+from app.categories import OPERATOR, TIER, FLASK
 
 rules = [
-    Show(
-        [
-            AreaLevel(65, operator=OPERATOR.LT),
-            MultiClass(["Life Flasks", "Mana Flasks"]),
-            TierStyle(TIER.COMMON),
-        ]
-    ),
-    Show(
-        [
-            AreaLevel(65, operator=OPERATOR.LT),
-            MultiBaseType(["Ultimate Life Flask", "Ultimate Mana Flask"]),
-            TierStyle(TIER.LEGENDARY),
-        ]
-    ),
+    # Show(
+    #     [
+    #         MultiClass(["Life Flasks", "Mana Flasks"]),
+    #         TierStyle(TIER.COMMON),
+    #     ]
+    # ),
+    # Show(
+    #     [
+    #         MultiBaseType(["Ultimate Life Flask", "Ultimate Mana Flask"]),
+    #         TierStyle(TIER.EPIC),
+    #     ]
+    # ),
     Hide(
         [
-            AreaLevel(65, operator=OPERATOR.GTE),
-            MultiClass(["Life Flasks", "Mana Flasks"]),
+            MultiBaseType([FLASK.LIFE, FLASK.MANA], operator=OPERATOR.EQUAL),
         ]
     ),
 ]

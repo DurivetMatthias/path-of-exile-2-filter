@@ -265,7 +265,7 @@ class MapTier(Condition):
 
     def __str__(self):
         return f"""
-            MapTier {self.operator} {self.value}
+            WaystoneTier {self.operator} {self.value}
         """
 
 

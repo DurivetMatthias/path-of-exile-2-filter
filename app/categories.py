@@ -132,6 +132,7 @@ class WEAPON(StrEnum):
 class OFFHAND(StrEnum):
     QUIVER = "Quivers"
     SHIELD = "Shields"
+    FOCUS = "FOCI"
 
 
 class JEWELRY(StrEnum):
@@ -148,6 +149,7 @@ class GEAR(StrEnum):
     GLOVES = "Gloves"
     HELMET = "Helmets"
     RING = "Rings"
+    CHARM = "Charms"
 
 
 class CHARM(StrEnum):
@@ -160,6 +162,7 @@ class CHARM(StrEnum):
     STONE = "Stone Charm"
     THAWING = "Thawing Charm"
     TOPAZ = "Topaz Charm"
+    GOLDEN = "Golden Charm"
 
 
 class FLASK(StrEnum):
@@ -181,8 +184,16 @@ class LIFE_FLASK(StrEnum):
 
 
 class MANA_FLASK(StrEnum):
-    # TODO
-    pass
+    # https://poe2db.tw/us/Mana_Flasks#ManaFlasksItem
+    LESSER = "Lesser Mana Flask"
+    MEDIUM = "Medium Mana Flask"
+    GREATER = "Greater Mana Flask"
+    GRAND = "Grand Mana Flask"
+    GIANT = "Giant Mana Flask"
+    COLOSSAL = "Colossal Mana Flask"
+    GARGANTUAN = "Gargantuan Mana Flask"
+    TRANSCENDENT = "Transcendent Mana Flask"
+    ULTIMATE = "Ultimate Mana Flask"
 
 
 class AMULET(StrEnum):
@@ -261,132 +272,38 @@ class STAFF(StrEnum):
     DARK = "Dark Staff"
 
 
-class BODY_ARMOUR(StrEnum):
-    # https://poe2db.tw/us/Body_Armours#BodyArmoursItem
-    class STR(StrEnum):
-        RUSTED_CUIRASS = "Rusted Cuirass"
-        FUR_PLATE = "Fur Plate"
-        IRON_CUIRASS = "Iron Cuirass"
-        RAIDER_PLATE = "Raider Plate"
-        MARAKETH_CUIRASS = "Maraketh Cuirass"
-        STEEL_PLATE = "Steel Plate"
-        FULL_PLATE = "Full Plate"
-        VAAL_CUIRASS = "Vaal Cuirass"
-        JUGGERNAUT_PLATE = "Juggernaut Plate"
-        CHIEFTAIN_CUIRASS = "Chieftain Cuirass"
-        COLOSSEUM_PLATE = "Colosseum Plate"
-        CHAMPION_CUIRASS = "Champion Cuirass"
-        GLORIOUS_PLATE = "Glorious Plate"
-        CONQUEROR_PLATE = "Conqueror Plate"
-        ABYSSAL_CUIRASS = "Abyssal Cuirass"
-
-    class DEX(StrEnum):
-        LEATHER_VEST = "Leather Vest"
-        QUILTED_VEST = "Quilted Vest"
-        PATHFINDER_COAT = "Pathfinder Coat"
-        SHROUDED_VEST = "Shrouded Vest"
-        RHOAHIDE_VEST = "Rhoahide Vest"
-        STUDDED_VEST = "Studded Vest"
-        SCOUTS_VEST = "Scout's Vest"
-        SERPENTSCALE_VEST = "Serpentscale Vest"
-        CORSAIR_VEST = "Corsair Vest"
-        SMUGGLER_COAT = "Smuggler Coat"
-        STRIDER_VEST = "Strider Vest"
-        HARDLEATHER_COAT = "Hardleather Coat"
-        EXQUISITE_VEST = "Exquisite Vest"
-        MAIL_COAT = "Mail Coat"
-        ARMOURED_VEST = "Armoured Vest"
-
-    class INT(StrEnum):
-        # TODO
-        pass
-
-    class STR_DEX(StrEnum):
-        # TODO
-        pass
-
-    class STR_INT(StrEnum):
-        # TODO
-        pass
-
-    class DEX_INT(StrEnum):
-        # TODO
-        pass
+class GEM(StrEnum):
+    SKILL = "Uncut Skill Gem"
+    SUPPORT = "Uncut Support Gem"
+    SPIRIT = "Uncut Spirit Gem"
 
 
-class HELMET(StrEnum):
-    class STR(StrEnum):
-        # TODO
-        pass
-
-    class DEX(StrEnum):
-        # TODO
-        pass
-
-    class INT(StrEnum):
-        # TODO
-        pass
-
-    class STR_DEX(StrEnum):
-        # TODO
-        pass
-
-    class STR_INT(StrEnum):
-        # TODO
-        pass
-
-    class DEX_INT(StrEnum):
-        # TODO
-        pass
+class RUNE(StrEnum):
+    IRON = "Iron Rune"
+    DESERT = "Desert Rune"
+    GLACIAL = "Glacial Rune"
+    STORM = "Storm Rune"
+    BODY = "Body Rune"
+    MIND = "Mind Rune"
+    VISION = "Vision Rune"
+    REBIRTH = "Rebirth Rune"
+    INSPIRATION = "Inspiration Rune"
+    STONE = "Stone Rune"
 
 
-class BOOTS(StrEnum):
-    class STR(StrEnum):
-        # TODO
-        pass
-
-    class DEX(StrEnum):
-        # TODO
-        pass
-
-    class INT(StrEnum):
-        # TODO
-        pass
-
-    class STR_DEX(StrEnum):
-        # TODO
-        pass
-
-    class STR_INT(StrEnum):
-        # TODO
-        pass
-
-    class DEX_INT(StrEnum):
-        # TODO
-        pass
-
-
-class GLOVES(StrEnum):
-    class STR(StrEnum):
-        # TODO
-        pass
-
-    class DEX(StrEnum):
-        # TODO
-        pass
-
-    class INT(StrEnum):
-        # TODO
-        pass
-
-    class STR_DEX(StrEnum):
-        # TODO
-        pass
-
-    class STR_INT(StrEnum):
-        # TODO
-        pass
-
-    class DEX_INT(StrEnum):
-        # TODO
-        pass
+class SOUL_CORE(StrEnum):
+    TACATI = "Soul Core of Tacati"
+    TOPOTANTE = "Soul Core of Topotante"
+    OPILOTI = "Soul Core of Opiloti"
+    JIQUANI = "Soul Core of Jiquani"
+    ZALATL = "Soul Core of Zalatl"
+    CITAQUALOTL = "Soul Core of Citaqualotl"
+    PUHUARTE = "Soul Core of Puhuarte"
+    TZAMOTO = "Soul Core of Tzamoto"
+    XOPEC = "Soul Core of Xopec"
+    QUIPOLATL = "Soul Core of Quipolatl"
+    TICABA = "Soul Core of Ticaba"
+    ATMOHUA = "Soul Core of Atmohua"
+    CHOLOTL = "Soul Core of Cholotl"
+    ZANTIPI = "Soul Core of Zantipi"
+    AZCAPA = "Soul Core of Azcapa"

@@ -1,14 +1,31 @@
-# Socketable
-from app.conditions import Class
+from app.conditions import MultiBaseType
 from app.actions import TierStyle
-from app.blocks import Show
-from app.categories import TIER
+from app.blocks import Show, Hide
+from app.categories import TIER, RUNE, SOUL_CORE
 
 rules = [
     Show(
         [
-            Class("Socketable"),
-            TierStyle(TIER.COMMON),
+            MultiBaseType(list(SOUL_CORE)),
+            TierStyle(TIER.LEGENDARY),
+        ]
+    ),
+    # Show(
+    #     [
+    #         MultiBaseType(
+    #             [
+    #                 RUNE.IRON,
+    #                 RUNE.DESERT,
+    #                 RUNE.GLACIAL,
+    #                 RUNE.STORM,
+    #             ]
+    #         ),
+    #         TierStyle(TIER.COMMON),
+    #     ]
+    # ),
+    Hide(
+        [
+            MultiBaseType(list(RUNE)),
         ]
     ),
 ]
