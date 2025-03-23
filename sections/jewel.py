@@ -1,17 +1,16 @@
-from app.conditions import MultiBaseType
+from app.conditions import MultiBaseType, Class
 from app.actions import TierStyle
 from app.blocks import Show
-from app.categories import TIER
+from app.categories import TIER, JEWEL
 
 rules = [
     Show(
         [
             MultiBaseType(
                 [
-                    "Ruby",
-                    "Emerald",
-                    "Sapphire",
-                    "Diamond",
+                    JEWEL.RUBY,
+                    JEWEL.EMERALD,
+                    JEWEL.SAPPHIRE,
                 ]
             ),
             TierStyle(TIER.LEGENDARY),
@@ -21,14 +20,13 @@ rules = [
         [
             MultiBaseType(
                 [
-                    "Time-Lost Ruby",
-                    "Time-Lost Emerald",
-                    "Time-Lost Sapphire",
-                    "Time-Lost Diamond",
-                    "Timeless Jewel",
+                    JEWEL.TIME_LOST_RUBY,
+                    JEWEL.TIME_LOST_EMERALD,
+                    JEWEL.TIME_LOST_SAPPHIRE,
                 ]
             ),
             TierStyle(TIER.LEGENDARY),
         ]
     ),
+    Show([Class("Jewels"), TierStyle(TIER.LEGENDARY)]),
 ]

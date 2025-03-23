@@ -1,37 +1,34 @@
 from app.actions import TierStyle
-from app.conditions import MultiBaseType, BaseType, ItemLevel
-from app.blocks import Hide, Show
-from app.categories import TIER, GEM, OPERATOR
+from app.conditions import BaseType, ItemLevel
+from app.blocks import Show
+from app.categories import TIER, GEM
 
 rules = [
-    Show(
-        [
-            ItemLevel(19),
-            MultiBaseType(list(GEM)),
-            TierStyle(TIER.LEGENDARY),
-        ]
-    ),
-    Show(
-        [
-            ItemLevel(13, operator=OPERATOR.LTE),
-            MultiBaseType(list(GEM)),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Show(
-        [
-            MultiBaseType(
-                [
-                    GEM.SPIRIT,
-                    GEM.SUPPORT,
-                ]
-            ),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Hide(
-        [
-            MultiBaseType(list(GEM)),
-        ]
-    ),
+    # Skill
+    Show([TierStyle(TIER.LEGENDARY), BaseType(GEM.SKILL)]),
+    Show([TierStyle(TIER.LEGENDARY), ItemLevel(14), BaseType(GEM.SKILL)]),
+    Show([TierStyle(TIER.LEGENDARY), ItemLevel(15), BaseType(GEM.SKILL)]),
+    Show([TierStyle(TIER.LEGENDARY), ItemLevel(16), BaseType(GEM.SKILL)]),
+    Show([TierStyle(TIER.LEGENDARY), ItemLevel(17), BaseType(GEM.SKILL)]),
+    Show([TierStyle(TIER.LEGENDARY), ItemLevel(18), BaseType(GEM.SKILL)]),
+    Show([TierStyle(TIER.LEGENDARY), ItemLevel(19), BaseType(GEM.SKILL)]),
+    Show([TierStyle(TIER.LEGENDARY), ItemLevel(20), BaseType(GEM.SKILL)]),
+    # Support
+    Show([TierStyle(TIER.LEGENDARY), BaseType(GEM.SUPPORT)]),
+    Show([TierStyle(TIER.LEGENDARY), ItemLevel(14), BaseType(GEM.SUPPORT)]),
+    Show([TierStyle(TIER.LEGENDARY), ItemLevel(15), BaseType(GEM.SUPPORT)]),
+    Show([TierStyle(TIER.LEGENDARY), ItemLevel(16), BaseType(GEM.SUPPORT)]),
+    Show([TierStyle(TIER.LEGENDARY), ItemLevel(17), BaseType(GEM.SUPPORT)]),
+    Show([TierStyle(TIER.LEGENDARY), ItemLevel(18), BaseType(GEM.SUPPORT)]),
+    Show([TierStyle(TIER.LEGENDARY), ItemLevel(19), BaseType(GEM.SUPPORT)]),
+    Show([TierStyle(TIER.LEGENDARY), ItemLevel(20), BaseType(GEM.SUPPORT)]),
+    # Spirit
+    Show([TierStyle(TIER.LEGENDARY), BaseType(GEM.SPIRIT)]),
+    Show([TierStyle(TIER.LEGENDARY), ItemLevel(14), BaseType(GEM.SPIRIT)]),
+    Show([TierStyle(TIER.LEGENDARY), ItemLevel(15), BaseType(GEM.SPIRIT)]),
+    Show([TierStyle(TIER.LEGENDARY), ItemLevel(16), BaseType(GEM.SPIRIT)]),
+    Show([TierStyle(TIER.LEGENDARY), ItemLevel(17), BaseType(GEM.SPIRIT)]),
+    Show([TierStyle(TIER.LEGENDARY), ItemLevel(18), BaseType(GEM.SPIRIT)]),
+    Show([TierStyle(TIER.LEGENDARY), ItemLevel(19), BaseType(GEM.SPIRIT)]),
+    Show([TierStyle(TIER.LEGENDARY), ItemLevel(20), BaseType(GEM.SPIRIT)]),
 ]

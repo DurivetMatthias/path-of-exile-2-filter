@@ -1,47 +1,17 @@
 from app.conditions import BaseType, Rarity
 from app.actions import TierStyle
 from app.blocks import Show
-from app.categories import TIER, RARITY, OPERATOR, RING, BELT
+from app.categories import TIER, RARITY, RING, BELT, BOW
 
 rules = [
     # Goldrim
-    Show(
-        [
-            BaseType("Felt Cap"),
-            Rarity(RARITY.NORMAL, operator=OPERATOR.EQUAL),
-            TierStyle(TIER.LEGENDARY),
-        ]
-    ),
+    Show([BaseType("Felt Cap"), Rarity(RARITY.NORMAL), TierStyle(TIER.LEGENDARY)]),
     # Ventor's Gamble
-    Show(
-        [
-            BaseType(RING.GOLD),
-            Rarity(RARITY.NORMAL, operator=OPERATOR.EQUAL),
-            TierStyle(TIER.LEGENDARY),
-        ]
-    ),
+    Show([BaseType(RING.GOLD), Rarity(RARITY.NORMAL), TierStyle(TIER.LEGENDARY)]),
     # Widowhail
-    Show(
-        [
-            BaseType("Crude Bow"),
-            Rarity(RARITY.NORMAL, operator=OPERATOR.EQUAL),
-            TierStyle(TIER.LEGENDARY),
-        ]
-    ),
+    Show([BaseType(BOW.CRUDE), Rarity(RARITY.NORMAL), TierStyle(TIER.LEGENDARY)]),
     # Polcirkeln
-    Show(
-        [
-            BaseType(RING.SAPPHIRE),
-            Rarity(RARITY.NORMAL, operator=OPERATOR.EQUAL),
-            TierStyle(TIER.LEGENDARY),
-        ]
-    ),
+    Show([BaseType(RING.SAPPHIRE), Rarity(RARITY.NORMAL), TierStyle(TIER.LEGENDARY)]),
     # Headhunter
-    Show(
-        [
-            BaseType(BELT.HEAVY),
-            Rarity(RARITY.NORMAL, operator=OPERATOR.EQUAL),
-            TierStyle(TIER.LEGENDARY),
-        ]
-    ),
+    Show([BaseType(BELT.HEAVY), Rarity(RARITY.NORMAL), TierStyle(TIER.LEGENDARY)]),
 ]

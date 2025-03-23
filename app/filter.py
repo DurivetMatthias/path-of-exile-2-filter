@@ -8,6 +8,7 @@ reduce it to one-to-one as much as possible
 
 import os
 import datetime
+from pathlib import Path
 
 from app import formatting
 from app.blocks import Block, Hide, Show
@@ -15,14 +16,15 @@ from app.actions import TierStyle
 from app.categories import TIER
 
 FILTER_EXTENSION = "filter"
-RUTHLESS_EXTENSION = "ruthlessfilter"
-FILTER_OUTPUT_PATH = "C:\\Users\\matth\\Documents\\my games\\Path of Exile 2"
+FILTER_OUTPUT_PATH = Path().home() / "Documents" / "my games" / "Path of Exile 2"
+if not FILTER_OUTPUT_PATH.exists():
+    FILTER_OUTPUT_PATH = Path(".")
 
 
-def sort_by_tierstyle(a: Block):
+def sort_by_tierstyle(block: Block):
     """Sort by importance based on TierStyle"""
     tier = None
-    for condition in a.conditions:
+    for condition in block.conditions:
         if isinstance(condition, TierStyle):
             tier = condition.tier
             break
@@ -47,7 +49,7 @@ def sort_rules(rules: list[Block]):
     return [*show_rules, *hide_rules]
 
 
-def generate(*, rules, filter_name, is_ruthless=False):
+def generate(*, rules: list[Block], filter_name: str):
     header = f"""
         # The following item filter was automatically generated.
         # Created on {datetime.datetime.now().strftime("%A %B %d %Y, %H:%M:%S")}.
@@ -57,13 +59,11 @@ def generate(*, rules, filter_name, is_ruthless=False):
         rules=sorted_rules,
         header=header,
     )
-    filter_filename = (
-        f"{filter_name}.{RUTHLESS_EXTENSION if is_ruthless else FILTER_EXTENSION}"
-    )
+    filter_filename = f"{filter_name}.{FILTER_EXTENSION}"
     output_filepath = os.path.join(FILTER_OUTPUT_PATH, filter_filename)
     with open(output_filepath, mode="w", encoding="utf-8") as output_file:
         output_file.write(file_content)
-    divider = "=" * 10
+    divider = "-" * 10
     print(divider)
     print("Inspect the item filter:")
     print(output_filepath)

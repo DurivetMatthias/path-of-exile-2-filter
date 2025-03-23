@@ -258,7 +258,7 @@ class MapTier(Condition):
     def __init__(
         self,
         value: int,
-        operator: OPERATOR = OPERATOR.GTE,
+        operator: OPERATOR = OPERATOR.EXACT,
     ):
         self.value = value
         self.operator = operator
@@ -308,7 +308,7 @@ class MultiClass(Condition):
 class Quality(Condition):
     def __init__(
         self,
-        value: int,
+        value: int = 1,
         operator: OPERATOR = OPERATOR.GTE,
     ):
         self.value = value
@@ -324,7 +324,7 @@ class Rarity(Condition):
     def __init__(
         self,
         value: RARITY,
-        operator: OPERATOR = OPERATOR.GTE,
+        operator: OPERATOR = OPERATOR.EXACT,
     ):
         self.value = value
         self.operator = operator

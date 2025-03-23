@@ -1,13 +1,9 @@
-from app.conditions import BaseType
+from app.conditions import MultiBaseType
 from app.actions import TierStyle
 from app.blocks import Show
-from app.categories import TIER, OPERATOR
+from app.categories import TIER, ESSENCE, GREATER_ESSENCE
 
 rules = [
-    Show(
-        [
-            BaseType("Essence", operator=OPERATOR.EQUAL),
-            TierStyle(TIER.RARE),
-        ]
-    ),
+    Show([MultiBaseType(list(ESSENCE)), TierStyle(TIER.EPIC)]),
+    Show([MultiBaseType(list(GREATER_ESSENCE)), TierStyle(TIER.LEGENDARY)]),
 ]
