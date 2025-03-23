@@ -1,4 +1,4 @@
-from app.conditions import Rarity, Sockets, Quality, MultiBaseType, MultiClass
+from app.conditions import Rarity, Sockets, Quality, MultiClass
 from app.actions import TierStyle
 from app.blocks import Show
 from app.categories import RARITY, TIER, OPERATOR, WEAPON, GEAR, OFFHAND, FLASK
