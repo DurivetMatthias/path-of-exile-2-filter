@@ -214,8 +214,8 @@ class CHARM(StrEnum):
 
 
 class FLASK(StrEnum):
-    LIFE = "Life Flask"
-    MANA = "Mana Flask"
+    LIFE = "Life Flasks"
+    MANA = "Mana Flasks"
 
 
 class LIFE_FLASK(StrEnum):
@@ -294,10 +294,10 @@ class RING(StrEnum):
 
 class JEWEL(StrEnum):
     # https://poe2db.tw/us/Jewels#JewelsItem
-    RUBY = "Ruby Jewel"
-    EMERALD = "Emerald Jewel"
-    SAPPHIRE = "Sapphire Jewel"
-    DIAMOND = "Diamond Jewel"
+    RUBY = "Ruby"
+    EMERALD = "Emerald"
+    SAPPHIRE = "Sapphire"
+    DIAMOND = "Diamond"
     TIME_LOST_RUBY = "Time-Lost Ruby"
     TIME_LOST_EMERALD = "Time-Lost Emerald"
     TIME_LOST_SAPPHIRE = "Time-Lost Sapphire"
@@ -349,7 +349,7 @@ class CURRENCY(StrEnum):
     AUGMENTATION = "Orb of Augmentation"
     ALCHEMY = "Orb of Alchemy"
     REGAL = "Regal Orb"
-    CHAOS = "Orb of Chaos"
+    CHAOS = "Chaos Orb"
     VAAL = "Vaal Orb"
     EXALTED = "Exalted Orb"
     DIVINE = "Divine Orb"
@@ -433,7 +433,7 @@ class EMOTION(StrEnum):
 
 class CATALYST(StrEnum):
     FLESH = "Flesh Catalyst"
-    NEUTRAL = "Neutral Catalyst"
+    NEURAL = "Neural Catalyst"
     CARAPACE = "Carapace Catalyst"
     UUL_NETOL = "Uul-Netol's Catalyst"
     XOPH = "Xoph's Catalyst"

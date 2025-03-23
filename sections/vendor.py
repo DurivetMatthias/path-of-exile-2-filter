@@ -1,4 +1,4 @@
-from app.conditions import Rarity, Sockets, Quality, MultiBaseType
+from app.conditions import Rarity, Sockets, Quality, MultiBaseType, MultiClass
 from app.actions import TierStyle
 from app.blocks import Show
 from app.categories import RARITY, TIER, OPERATOR, WEAPON, GEAR, OFFHAND, FLASK
@@ -46,8 +46,8 @@ rules = [
     Show([Rarity(RARITY.UNIQUE), TierStyle(TIER.COMMON)]),
     Show([Sockets("S", operator=OPERATOR.EXACT), TierStyle(TIER.COMMON)]),
     Show([Sockets("SS", operator=OPERATOR.EXACT), TierStyle(TIER.COMMON)]),
-    Show([Quality(), MultiBaseType(MARTIAL), TierStyle(TIER.COMMON)]),
-    Show([Quality(), MultiBaseType(ARCANIST), TierStyle(TIER.COMMON)]),
-    Show([Quality(), MultiBaseType(ARMOUR), TierStyle(TIER.COMMON)]),
-    Show([Quality(), MultiBaseType(GLASSBLOWER), TierStyle(TIER.COMMON)]),
+    Show([Quality(), MultiClass(MARTIAL), TierStyle(TIER.COMMON)]),
+    Show([Quality(), MultiClass(ARCANIST), TierStyle(TIER.COMMON)]),
+    Show([Quality(), MultiClass(ARMOUR), TierStyle(TIER.COMMON)]),
+    Show([Quality(), MultiClass(GLASSBLOWER), TierStyle(TIER.COMMON)]),
 ]
