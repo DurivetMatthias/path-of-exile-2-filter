@@ -310,6 +310,19 @@ class GEM(StrEnum):
     SPIRIT = "Uncut Spirit Gem"
 
 
+class LESSER_RUNE(StrEnum):
+    IRON = "Lesser Iron Rune"
+    DESERT = "Lesser Desert Rune"
+    GLACIAL = "Lesser Glacial Rune"
+    STORM = "Lesser Storm Rune"
+    BODY = "Lesser Body Rune"
+    MIND = "Lesser Mind Rune"
+    VISION = "Lesser Vision Rune"
+    REBIRTH = "Lesser Rebirth Rune"
+    INSPIRATION = "Lesser Inspiration Rune"
+    STONE = "Lesser Stone Rune"
+
+
 class RUNE(StrEnum):
     IRON = "Iron Rune"
     DESERT = "Desert Rune"
@@ -321,6 +334,25 @@ class RUNE(StrEnum):
     REBIRTH = "Rebirth Rune"
     INSPIRATION = "Inspiration Rune"
     STONE = "Stone Rune"
+
+
+class GREATER_RUNE(StrEnum):
+    IRON = "Greater Iron Rune"
+    DESERT = "Greater Desert Rune"
+    GLACIAL = "Greater Glacial Rune"
+    STORM = "Greater Storm Rune"
+    BODY = "Greater Body Rune"
+    MIND = "Greater Mind Rune"
+    VISION = "Greater Vision Rune"
+    REBIRTH = "Greater Rebirth Rune"
+    INSPIRATION = "Greater Inspiration Rune"
+    STONE = "Greater Stone Rune"
+
+
+class TALISMAN(StrEnum):
+    BOAR = "Boar Talisman"
+    CAT = "Cat Talisman"
+    RABBIT = "Rabbit Talisman"
 
 
 class SOUL_CORE(StrEnum):
@@ -356,6 +388,7 @@ class CURRENCY(StrEnum):
     ANNULMENT = "Orb of Annulment"
     CHANCE = "Orb of Chance"
     MIRROR = "Mirror of Kalandra"
+    FRACTURING = "Fracturing Orb"
 
     ARCANIST = "Arcanist's Etcher"
     ARMOURER = "Armourer's Scrap"
@@ -416,6 +449,13 @@ class GREATER_ESSENCE(StrEnum):
     SORCERY = "Greater Essence of Sorcery"
     HASTE = "Greater Essence of Haste"
     INFINITE = "Greater Essence of the Infinite"
+
+
+class CORRUPT_ESSENCE(StrEnum):
+    INSANITY = "Essence of Insanity"
+    HORROR = "Essence of Horror"
+    DELIRIUM = "Essence of Delirium"
+    HYSTERIA = "Essence of Hysteria"
 
 
 class EMOTION(StrEnum):
