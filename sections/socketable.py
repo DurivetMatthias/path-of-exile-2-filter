@@ -16,4 +16,8 @@ rules = [
     Show([BaseType(RUNE.DESERT), TierStyle(TIER.LEGENDARY)]),
     Show([BaseType(RUNE.GLACIAL), TierStyle(TIER.LEGENDARY)]),
     Show([BaseType(RUNE.STORM), TierStyle(TIER.LEGENDARY)]),
+    Show([BaseType(GREATER_RUNE.IRON), TierStyle(TIER.LEGENDARY)]),
+    Show([BaseType(GREATER_RUNE.DESERT), TierStyle(TIER.LEGENDARY)]),
+    Show([BaseType(GREATER_RUNE.GLACIAL), TierStyle(TIER.LEGENDARY)]),
+    Show([BaseType(GREATER_RUNE.STORM), TierStyle(TIER.LEGENDARY)]),
 ]

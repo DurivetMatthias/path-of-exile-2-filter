@@ -20,6 +20,8 @@ from sections import (
     vendor,
     waystone,
     weapon,
+    buckler,
+    charm,
 )
 
 rules = [
@@ -43,6 +45,8 @@ rules = [
     *vendor.rules,
     *waystone.rules,
     *weapon.rules,
+    *buckler.rules,
+    *charm.rules,
 ]
 
 filter.generate(

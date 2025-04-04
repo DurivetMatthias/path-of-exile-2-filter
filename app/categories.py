@@ -132,7 +132,48 @@ class WEAPON(StrEnum):
 class OFFHAND(StrEnum):
     QUIVER = "Quivers"
     SHIELD = "Shields"
+    BUCKLER = "Bucklers"
     FOCUS = "FOCI"
+
+
+# Item Class: Bucklers
+# Leather Buckler
+# Wooden Buckler
+# Plated Buckler
+# Iron Buckler
+# Ridged Buckler
+# Spiked Buckler
+# Ringed Buckler
+# Edged Buckler
+# Oak Buckler
+# Painted Buckler
+# Coiled Buckler
+# Spikeward Buckler
+# Jingling Buckler
+# Bladeguard Buckler
+# Ornate Buckler
+# Gutspike Buckler
+# Ancient Buckler
+
+
+class BUCKLER(StrEnum):
+    LEATHER = "Leather Buckler"
+    WOODEN = "Wooden Buckler"
+    PLATED = "Plated Buckler"
+    IRON = "Iron Buckler"
+    RIDGED = "Ridged Buckler"
+    SPIKED = "Spiked Buckler"
+    RINGED = "Ringed Buckler"
+    EDGED = "Edged Buckler"
+    OAK = "Oak Buckler"
+    PAINTED = "Painted Buckler"
+    COILED = "Coiled Buckler"
+    SPIKEWARD = "Spikeward Buckler"
+    JINGLING = "Jingling Buckler"
+    BLADEGUARD = "Bladeguard Buckler"
+    ORNATE = "Ornate Buckler"
+    GUTSPIKE = "Gutspike Buckler"
+    ANCIENT = "Ancient Buckler"
 
 
 class FISHING_ROD(StrEnum):
@@ -163,7 +204,27 @@ class SPEAR:
     IRONHEAD = "Ironhead Spear"
     HUNTING = "Hunting Spear"
     WINGED = "Winged Spear"
-    # TODO: Add more spear types
+    WAR = "War Spear"
+    FORKED = "Forked Spear"
+    BARBED = "Barbed Spear"
+    BROAD = "Broad Spear"
+    CROSSBLADE = "Crossblade Spear"
+    SEAGLASS = "Seaglass Spear"
+    SWORD = "Sword Spear"
+    STRIKING = "Striking Spear"
+    HELIX = "Helix Spear"
+    STEELHEAD = "Steelhead Spear"
+    COURSING = "Coursing Spear"
+    SWIFT = "Swift Spear"
+    BRANCHED = "Branched Spear"
+    JAGGED = "Jagged Spear"
+    MASSIVE = "Massive Spear"
+    ORICHALCUM = "Orichalcum Spear"
+    PRONGED = "Pronged Spear"
+    STALKING = "Stalking Spear"
+    FLYING = "Flying Spear"
+    GRAND = "Grand Spear"
+    SPIKED = "Spiked Spear"
 
 
 class BOW(StrEnum):
@@ -347,12 +408,24 @@ class GREATER_RUNE(StrEnum):
     REBIRTH = "Greater Rebirth Rune"
     INSPIRATION = "Greater Inspiration Rune"
     STONE = "Greater Stone Rune"
+    LEADERSHIP = "Greater Rune of Leadership"
+    TITHING = "Greater Rune of Tithing"
+    ALACRITY = "Greater Rune of Alacrity"
+    NOBILITY = "Greater Rune of Nobility"
 
 
 class TALISMAN(StrEnum):
     BOAR = "Boar Talisman"
     CAT = "Cat Talisman"
     RABBIT = "Rabbit Talisman"
+    SERPENT = "Serpent Talisman"
+    PRIMATE = "Primate Talisman"
+    OWL = "Owl Talisman"
+    WOLF = "Wolf Talisman"
+    STAG = "Stag Talisman"
+    BEAR = "Bear Talisman"
+    OX = "Ox Talisman"
+    FOX = "Fox Talisman"
 
 
 class SOUL_CORE(StrEnum):
@@ -504,6 +577,10 @@ class OMEN(StrEnum):
     SINISTRAL_ERASURE = "Omen of Sinistral Erasure"
     SINISTRAL_EXALTATION = "Omen of Sinistral Exaltation"
     WHITTLING = "Omen of Whittling"
+    ANSWERED_PRAYERS = "Omen of Answered Prayers"
+    SECRET_COMPARTMENTS = "Omen of Secret Compartments"
+    HUNT = "Omen of the Hunt"
+    REINFORCEMENTS = "Omen of Reinforcements"
 
 
 class SPLINTER(StrEnum):
@@ -529,6 +606,17 @@ class INVITATION(StrEnum):
 class TRIAL(StrEnum):
     ULTIMATUM = "Inscribed Ultimatum"
     BARYA = "Djinn Barya"
+
+
+class RELIQUARY_KEY(StrEnum):
+    TWILIGHT = "Twilight Reliquary Key"
+    XESHT = "Xesht's Reliquary Key"
+    TRIALMASTER = "The Trialmaster's Reliquary Key"
+    RITUALISTIC = "Ritualistic Reliquary Key"
+    TANGMAZU = "Tangmazu's Reliquary Key"
+    OLROTH = "Olroth's Reliquary Key"
+    ARBITER = "The Arbiter's Reliquary Key"
+    ZAROKH = "Zarokh's Reliquary Key"
 
 
 class AREA_LEVEL(IntEnum):
