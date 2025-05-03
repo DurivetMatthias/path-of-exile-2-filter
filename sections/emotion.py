@@ -4,5 +4,5 @@ from app.blocks import Show
 from app.categories import TIER, EMOTION
 
 rules = [
-    Show([MultiBaseType(list(EMOTION)), TierStyle(TIER.EPIC)]),
+    Show([MultiBaseType(list(EMOTION)), TierStyle(TIER.LEGENDARY)]),
 ]

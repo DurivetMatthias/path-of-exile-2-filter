@@ -108,6 +108,36 @@ class OPERATOR(StrEnum):
     EXACT = "=="
 
 
+class ARMOUR(StrEnum):
+    BODY = "Body Armours"
+    BOOTS = "Boots"
+    GLOVES = "Gloves"
+    HELMET = "Helmets"
+
+
+class DEX_BODY_ARMOUR(StrEnum):
+    SLIPSTRIKE = "Slipstrike Vest"
+
+
+class DEX_INT_BODY_ARMOUR(StrEnum):
+    FALCONER = "Falconer's Jacket"
+    RAMBLER = "Rambler Jacket"
+    SLEEK = "Sleek Jacket"
+
+
+class INT_BODY_ARMOUR(StrEnum):
+    VILE = "Vile Robe"
+
+
+class INT_HELMET(StrEnum):
+    SKYCROWN = "Skycrown Tiara"
+    DRUIDIC = "Druidic Circlet"
+
+
+class INT_BOOTS(StrEnum):
+    LUXURIOUS = "Luxurious Slippers"
+
+
 class WEAPON(StrEnum):
     BOW = "Bows"
     CLAW = "Claws"
@@ -134,26 +164,6 @@ class OFFHAND(StrEnum):
     SHIELD = "Shields"
     BUCKLER = "Bucklers"
     FOCUS = "FOCI"
-
-
-# Item Class: Bucklers
-# Leather Buckler
-# Wooden Buckler
-# Plated Buckler
-# Iron Buckler
-# Ridged Buckler
-# Spiked Buckler
-# Ringed Buckler
-# Edged Buckler
-# Oak Buckler
-# Painted Buckler
-# Coiled Buckler
-# Spikeward Buckler
-# Jingling Buckler
-# Bladeguard Buckler
-# Ornate Buckler
-# Gutspike Buckler
-# Ancient Buckler
 
 
 class BUCKLER(StrEnum):
@@ -198,7 +208,7 @@ class STAFF(StrEnum):
     DARK = "Dark Staff"
 
 
-class SPEAR:
+class SPEAR(StrEnum):
     # https://poe2db.tw/us/Spears#SpearsItem
     HARDWOOD = "Hardwood Spear"
     IRONHEAD = "Ironhead Spear"
@@ -225,6 +235,23 @@ class SPEAR:
     FLYING = "Flying Spear"
     GRAND = "Grand Spear"
     SPIKED = "Spiked Spear"
+
+
+class WAND(StrEnum):
+    # https://poe2db.tw/us/Wands#WandsItem
+    WITHER = "Withered Wand"
+    BONE = "Bone Wand"
+    ATTUNED = "Attuned Wand"
+    SIPHONING = "Siphoning Wand"
+    VOLATILE = "Volatile Wand"
+    GALVANIC = "Galvanic Wand"
+    ACRID = "Acrid Wand"
+    OFFERING = "Offering Wand"
+    FRIGID = "Frigid Wand"
+    TORTURE = "Torture Wand"
+    CRITICAL = "Critical Wand"
+    PRIMORDIAL = "Primordial Wand"
+    DUELING = "Dueling Wand"
 
 
 class BOW(StrEnum):
@@ -480,12 +507,31 @@ class CURRENCY(StrEnum):
     CHANCE_SHARD = "Chance Shard"
 
 
+class TABLET(StrEnum):
+    BREACH = "Breach Precursor Tablet"
+    DELIRIUM = "Delirium Precursor Tablet"
+    NORMAL = "Precursor Tablet"
+    EXPEDITION = "Expedition Precursor Tablet"
+    RITUAL = "Ritual Precursor Tablet"
+    BOSS = "Overseer Precursor Tablet"
+
+
 class ARTIFACT(StrEnum):
     EXOTIC_COINAGE = "Exotic Coinage"
     CIRCLE = "Broken Circle Artifact"
     SCYTHE = "Black Scythe Artifact"
     ORDER = "Order Artifact"
     SUN = "Sun Artifact"
+
+
+class RELIC(StrEnum):
+    URN = "Urn Relic"
+    AMPHORA = "Amphora Relic"
+    VASE = "Vase Relic"
+    SEAL = "Seal Relic"
+    TAPESTRY = "Tapestry Relic"
+    INCENSE = "Incense Relic"
+    COFFER = "Coffer Relic"
 
 
 class SEKHEMA_KEY(StrEnum):

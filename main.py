@@ -1,8 +1,8 @@
 from app import filter
 from sections import (
+    armour,
     artifact,
     catalyst,
-    chance,
     currency,
     emotion,
     essence,
@@ -10,6 +10,7 @@ from sections import (
     gem,
     invitation,
     jewel,
+    offhand,
     omen,
     quest,
     scroll,
@@ -20,14 +21,17 @@ from sections import (
     vendor,
     waystone,
     weapon,
-    buckler,
     charm,
+    jewelry,
+    tablet,
+    relic,
+    hide,
 )
 
 rules = [
+    *armour.rules,
     *artifact.rules,
     *catalyst.rules,
-    *chance.rules,
     *currency.rules,
     *emotion.rules,
     *essence.rules,
@@ -45,8 +49,12 @@ rules = [
     *vendor.rules,
     *waystone.rules,
     *weapon.rules,
-    *buckler.rules,
+    *offhand.rules,
     *charm.rules,
+    *jewelry.rules,
+    *tablet.rules,
+    *relic.rules,
+    *hide.rules,
 ]
 
 filter.generate(

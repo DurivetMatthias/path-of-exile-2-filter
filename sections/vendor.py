@@ -41,13 +41,12 @@ GLASSBLOWER = [
 ]
 
 rules = [
-    Show([Rarity(RARITY.MAGIC), TierStyle(TIER.COMMON)]),
-    Show([Rarity(RARITY.RARE), TierStyle(TIER.COMMON)]),
-    Show([Rarity(RARITY.UNIQUE), TierStyle(TIER.COMMON)]),
-    Show([Sockets("S", operator=OPERATOR.EXACT), TierStyle(TIER.COMMON)]),
-    Show([Sockets("SS", operator=OPERATOR.EXACT), TierStyle(TIER.COMMON)]),
-    Show([Quality(), MultiClass(MARTIAL), TierStyle(TIER.COMMON)]),
-    Show([Quality(), MultiClass(ARCANIST), TierStyle(TIER.COMMON)]),
-    Show([Quality(), MultiClass(ARMOUR), TierStyle(TIER.COMMON)]),
-    Show([Quality(), MultiClass(GLASSBLOWER), TierStyle(TIER.COMMON)]),
+    # Show([Rarity(RARITY.MAGIC), TierStyle(TIER.COMMON)]),
+    # Show([Rarity(RARITY.RARE), TierStyle(TIER.COMMON)]),
+    # Show([Sockets("S", operator=OPERATOR.EXACT), TierStyle(TIER.COMMON)]),
+    # Show([Sockets("SS", operator=OPERATOR.EXACT), TierStyle(TIER.COMMON)]),
+    # Show([Quality(), MultiClass(MARTIAL), TierStyle(TIER.COMMON)]),
+    # Show([Quality(), MultiClass(ARCANIST), TierStyle(TIER.COMMON)]),
+    # Show([Quality(), MultiClass(ARMOUR), TierStyle(TIER.COMMON)]),
+    # Show([Quality(), MultiClass(GLASSBLOWER), TierStyle(TIER.COMMON)]),
 ]

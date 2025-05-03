@@ -4,5 +4,5 @@ from app.blocks import Show
 from app.categories import TIER, CATALYST
 
 rules = [
-    Show([MultiBaseType(list(CATALYST)), TierStyle(TIER.EPIC)]),
+    Show([MultiBaseType(list(CATALYST)), TierStyle(TIER.LEGENDARY)]),
 ]
