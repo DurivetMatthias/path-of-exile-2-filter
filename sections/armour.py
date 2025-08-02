@@ -1,9 +1,47 @@
-from app.conditions import MultiBaseType
-from app.actions import TierStyle
 from app.blocks import Show
-from app.categories import TIER, INT_BODY_ARMOUR, INT_HELMET
+from app.actions import TierStyle
+from app.conditions import MultiClass, BaseEnergyShield, BaseEvasion
+from app.categories import TIER, ARMOUR
 
 rules = [
-    # Show([MultiBaseType([INT_BODY_ARMOUR.VILE]), TierStyle(TIER.LEGENDARY)]),
-    # Show([MultiBaseType([INT_HELMET.SKYCROWN]), TierStyle(TIER.LEGENDARY)]),
+    # Show(
+    #     [
+    #         MultiClass(list(ARMOUR)),
+    #         BaseEnergyShield(),
+    #         BaseEvasion(),
+    #         TierStyle(TIER.COMMON),
+    #     ]
+    # ),
+    Show(
+        [
+            MultiClass([ARMOUR.BOOTS]),
+            BaseEnergyShield(35),
+            BaseEvasion(),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show(
+        [
+            MultiClass([ARMOUR.GLOVES]),
+            BaseEnergyShield(23),
+            BaseEvasion(),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show(
+        [
+            MultiClass([ARMOUR.HELMET]),
+            BaseEnergyShield(46),
+            BaseEvasion(),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show(
+        [
+            MultiClass([ARMOUR.BODY]),
+            BaseEnergyShield(101),
+            BaseEvasion(),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
 ]

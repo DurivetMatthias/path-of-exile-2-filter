@@ -272,7 +272,7 @@ class MapTier(Condition):
 class MultiBaseType(Condition):
     def __init__(
         self,
-        values: list[str],
+        values: list,
         operator: OPERATOR = OPERATOR.EXACT,
     ):
         self.values = values
@@ -290,7 +290,7 @@ class MultiBaseType(Condition):
 class MultiClass(Condition):
     def __init__(
         self,
-        values: list[str],
+        values: list,
         operator: OPERATOR = OPERATOR.EXACT,
     ):
         self.values = values
@@ -394,7 +394,7 @@ class Sockets(Condition):
 class StackSize(Condition):
     def __init__(
         self,
-        value: str,
+        value: int,
         operator: OPERATOR = OPERATOR.GTE,
     ):
         self.value = value
@@ -429,6 +429,21 @@ class TransfiguredGem(Condition):
     def __str__(self):
         return f"""
             TransfiguredGem {self.value}
+        """
+
+
+class UnidentifiedItemTier(Condition):
+    def __init__(
+        self,
+        value: int = 2,
+        operator: OPERATOR = OPERATOR.GTE,
+    ):
+        self.value = value
+        self.operator = operator
+
+    def __str__(self):
+        return f"""
+            UnidentifiedItemTier  {self.operator} {self.value}
         """
 
 

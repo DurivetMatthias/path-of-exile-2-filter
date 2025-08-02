@@ -48,5 +48,5 @@ rules = [
     # Show([Quality(), MultiClass(MARTIAL), TierStyle(TIER.COMMON)]),
     # Show([Quality(), MultiClass(ARCANIST), TierStyle(TIER.COMMON)]),
     # Show([Quality(), MultiClass(ARMOUR), TierStyle(TIER.COMMON)]),
-    # Show([Quality(), MultiClass(GLASSBLOWER), TierStyle(TIER.COMMON)]),
+    Show([Quality(), MultiClass(GLASSBLOWER), TierStyle(TIER.COMMON)]),
 ]

@@ -264,11 +264,33 @@ class BOW(StrEnum):
     DUALSTRING = "Dualstring Bow"
     CULTIST = "Cultist Bow"
     ZEALOT = "Zealot Bow"
-    ARTILLERY = "Artillery Bow"
-    TRIBAL = "Tribal Bow"
-    GREAT = "Greatbow"
-    DOUBLE_LIMB = "Double Limb Bow"
-    HEAVY = "Heavy Bow"
+    SNAKEWOOD = "Snakewood Shortbow"
+    PROTECTOR = "Protector Bow"
+    RIDER = "Rider Bow"
+    TWIN = "Twin Bow"
+    ADHERENT = "Adherent Bow"
+    MILITANT = "Militant Bow"
+    IRONWOOD = "Ironwood Shortbow"
+    CAVALRY = "Cavalry Bow"
+    GUARDIAN = "Guardian Bow"
+    WARMONGER = "Warmonger Bow"
+    GEMINI = "Gemini Bow"
+    FANATIC = "Fanatic Bow"
+
+
+class QUIVER(StrEnum):
+    # https://poe2db.tw/us/Quivers#QuiversItem
+    BROAD = "Broadhead Quiver"
+    FIRE = "Fire Quiver"
+    SACRAL = "Sacral Quiver"
+    TWO_POINT = "Two-Point Quiver"
+    BLUNT = "Blunt Quiver"
+    TOXIC = "Toxic Quiver"
+    SERATED = "Serrated Quiver"
+    PRIMED = "Primed Quiver"
+    PENETRATING = "Penetrating Quiver"
+    VOLANT = "Volant Quiver"
+    VISCERAL = "Visceral Quiver"
 
 
 class JEWELRY(StrEnum):
