@@ -35,4 +35,4 @@ rules = [
     *weapon.rules,
 ]
 
-filter.generate(rules=rules, filter_name="main")
+filter.generate(rules=rules)

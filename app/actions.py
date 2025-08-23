@@ -1,5 +1,5 @@
 from app.categories import *
-from app.conditions import Condition
+from app.conditions import *
 from app import formatting
 
 
@@ -112,3 +112,15 @@ class TierStyle(Condition):
         ]
 
         return formatting.format_conditions(child_conditions)
+
+
+class Strictness(Condition):
+    def __init__(
+        self,
+        strictness: STRICTNESS,
+    ):
+        self.strictness = strictness
+
+    def __str__(self):
+        # Used for filtering, should not appear as text in filter
+        return ""

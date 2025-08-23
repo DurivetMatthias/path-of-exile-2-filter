@@ -1,46 +1,33 @@
-from app.blocks import Show
-from app.actions import TierStyle
-from app.conditions import MultiClass, BaseEnergyShield, BaseEvasion
-from app.categories import TIER, ARMOUR
+from app.blocks import *
+from app.actions import *
+from app.conditions import *
+from app.categories import *
 
 rules = [
-    # Show(
-    #     [
-    #         MultiClass(list(ARMOUR)),
-    #         BaseEnergyShield(),
-    #         BaseEvasion(),
-    #         TierStyle(TIER.COMMON),
-    #     ]
-    # ),
     Show(
         [
-            MultiClass([ARMOUR.BOOTS]),
-            BaseEnergyShield(35),
-            BaseEvasion(),
+            AreaLevel(5),
+            MultiClass(list(ARMOUR)),
             TierStyle(TIER.COMMON),
+            Strictness(STRICTNESS.REGULAR),
         ]
     ),
+    # Stomping ground
     Show(
         [
-            MultiClass([ARMOUR.GLOVES]),
-            BaseEnergyShield(23),
-            BaseEvasion(),
-            TierStyle(TIER.COMMON),
+            AreaLevel(40),
+            MultiClass([ARMOUR.BOOTS, ARMOUR.GLOVES, ARMOUR.HELMET, ARMOUR.BODY]),
+            PureArmour(),
+            TierStyle(TIER.EPIC),
+            Strictness(STRICTNESS.STRICT),
         ]
     ),
+    # Dex build?
     Show(
         [
-            MultiClass([ARMOUR.HELMET]),
-            BaseEnergyShield(46),
-            BaseEvasion(),
-            TierStyle(TIER.COMMON),
-        ]
-    ),
-    Show(
-        [
-            MultiClass([ARMOUR.BODY]),
-            BaseEnergyShield(101),
-            BaseEvasion(),
+            AreaLevel(40, operator=OPERATOR.GTE),
+            MultiClass([ARMOUR.BOOTS, ARMOUR.GLOVES, ARMOUR.HELMET, ARMOUR.BODY]),
+            PureEvasion(),
             TierStyle(TIER.COMMON),
         ]
     ),

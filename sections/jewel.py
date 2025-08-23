@@ -1,7 +1,7 @@
-from app.conditions import MultiBaseType, Class
-from app.actions import TierStyle
-from app.blocks import Show
-from app.categories import TIER, JEWEL
+from app.blocks import *
+from app.actions import *
+from app.conditions import *
+from app.categories import *
 
 rules = [
     Show(

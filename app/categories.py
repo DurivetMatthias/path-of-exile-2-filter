@@ -1,6 +1,6 @@
 """A collection of all the categorical values used throughout the code"""
 
-from enum import StrEnum, IntEnum
+from enum import StrEnum
 
 
 class COLOR(StrEnum):
@@ -431,6 +431,10 @@ class LESSER_RUNE(StrEnum):
     REBIRTH = "Lesser Rebirth Rune"
     INSPIRATION = "Lesser Inspiration Rune"
     STONE = "Lesser Stone Rune"
+    ADEPT = "Lesser Adept Rune"
+    RESOLVE = "Lesser Resolve Rune"
+    ROBUST = "Lesser Robust Rune"
+    TEMPERED = "Lesser Tempered Rune"
 
 
 class RUNE(StrEnum):
@@ -444,6 +448,10 @@ class RUNE(StrEnum):
     REBIRTH = "Rebirth Rune"
     INSPIRATION = "Inspiration Rune"
     STONE = "Stone Rune"
+    ADEPT = "Adept Rune"
+    RESOLVE = "Resolve Rune"
+    ROBUST = "Robust Rune"
+    TEMPERED = "Tempered Rune"
 
 
 class GREATER_RUNE(StrEnum):
@@ -461,6 +469,10 @@ class GREATER_RUNE(StrEnum):
     TITHING = "Greater Rune of Tithing"
     ALACRITY = "Greater Rune of Alacrity"
     NOBILITY = "Greater Rune of Nobility"
+    ADEPT = "Greater Adept Rune"
+    RESOLVE = "Greater Resolve Rune"
+    ROBUST = "Greater Robust Rune"
+    TEMPERED = "Greater Tempered Rune"
 
 
 class TALISMAN(StrEnum):
@@ -687,15 +699,10 @@ class RELIQUARY_KEY(StrEnum):
     ZAROKH = "Zarokh's Reliquary Key"
 
 
-class AREA_LEVEL(IntEnum):
-    # TODO: Find exact area levels
-    ACT_1 = 1
-    ACT_2 = 16
-    ACT_3 = 33
-    ACT_4 = 45
-    ACT_5 = 51
-    ACT_6 = 58
-    WHITE_MAPS = 65
-    YELLOW_MAPS = 70
-    RED_MAPS = 75
-    ENDGAME = 79
+class STRICTNESS(StrEnum):
+    # Regular is for league start campaign
+    REGULAR = "regular"
+    # Strict is for early maps
+    STRICT = "strict"
+    # Uber is for endgame grinding
+    UBER = "uber"

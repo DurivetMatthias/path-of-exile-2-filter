@@ -1,4 +1,4 @@
-from app.categories import OPERATOR, RARITY
+from app.categories import *
 
 
 class Condition:
@@ -10,7 +10,7 @@ class AreaLevel(Condition):
     def __init__(
         self,
         value: int,
-        operator: OPERATOR = OPERATOR.GTE,
+        operator: OPERATOR = OPERATOR.LTE,
     ):
         self.value = value
         self.operator = operator
@@ -473,4 +473,61 @@ class Width(Condition):
     def __str__(self):
         return f"""
             Width {self.operator} {self.value}
+        """
+
+
+# CUSTOM conditions
+
+
+class PureArmour(Condition):
+    def __str__(self):
+        return """
+            BaseArmour >= 1
+            BaseEvasion == 0
+            BaseEnergyShield == 0
+        """
+
+
+class PureEvasion(Condition):
+    def __str__(self):
+        return """
+            BaseArmour == 0
+            BaseEvasion >= 1
+            BaseEnergyShield == 0
+        """
+
+
+class PureEnergyShield(Condition):
+    def __str__(self):
+        return """
+            BaseArmour == 0
+            BaseEvasion == 0
+            BaseEnergyShield >= 1
+        """
+
+
+class MixedArmourEvasion(Condition):
+    def __str__(self):
+        return """
+            BaseArmour >= 1
+            BaseEvasion >= 1
+            BaseEnergyShield == 0
+        """
+
+
+class MixedArmourEnergyShield(Condition):
+    def __str__(self):
+        return """
+            BaseArmour >= 1
+            BaseEvasion == 0
+            BaseEnergyShield >= 1
+        """
+
+
+class MixedEvasionEnergyShield(Condition):
+    def __str__(self):
+        return """
+            BaseArmour == 0
+            BaseEvasion >= 1
+            BaseEnergyShield >= 1
         """

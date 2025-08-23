@@ -1,30 +1,31 @@
-from app.conditions import MultiBaseType
-from app.actions import TierStyle
-from app.blocks import Show
-from app.categories import TIER, BOW, QUIVER
+from app.blocks import *
+from app.actions import *
+from app.conditions import *
+from app.categories import *
 
 rules = [
-    # Show([MultiBaseType(list(BOW)), TierStyle(TIER.EPIC)]),
-    # Show([MultiBaseType(list(QUIVER)), TierStyle(TIER.EPIC)]),
+    # Stomping ground
     Show(
         [
-            MultiBaseType(list(BOW)[-7:]),
+            MultiClass([WEAPON.SPEAR]),
             TierStyle(TIER.EPIC),
+            AreaLevel(40),
         ]
     ),
     Show(
         [
-            MultiBaseType(
-                [
-                    QUIVER.PRIMED,
-                    QUIVER.VISCERAL,
-                    QUIVER.VOLANT,
-                    QUIVER.TWO_POINT,
-                    QUIVER.FIRE,
-                    QUIVER.BROAD,
-                ]
-            ),
+            MultiClass([OFFHAND.SHIELD]),
+            PureArmour(),
             TierStyle(TIER.EPIC),
+            AreaLevel(40),
+        ]
+    ),
+    # Real build?
+    Show(
+        [
+            MultiClass([WEAPON.BOW, OFFHAND.QUIVER, WEAPON.QUARTERSTAFF]),
+            TierStyle(TIER.EPIC),
+            AreaLevel(40, operator=OPERATOR.GT),
         ]
     ),
 ]

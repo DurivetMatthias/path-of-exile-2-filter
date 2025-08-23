@@ -2,8 +2,8 @@ import textwrap
 
 from typing import Sequence
 
-from app.conditions import Condition
-from app.blocks import Block
+from app.conditions import *
+from app.blocks import *
 
 TAB_WITH_SPACES = " " * 4
 

@@ -1,4 +1,4 @@
-from app.conditions import Condition
+from app.conditions import *
 
 
 class Block:

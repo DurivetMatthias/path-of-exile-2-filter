@@ -1,14 +1,21 @@
-from app.conditions import Rarity, UnidentifiedItemTier
-from app.actions import TierStyle
-from app.blocks import Show
-from app.categories import TIER, RARITY
+from app.blocks import *
+from app.actions import *
+from app.conditions import *
+from app.categories import *
 
 rules = [
     Show(
         [
+            Rarity(RARITY.MAGIC),
+            UnidentifiedItemTier(),
+            TierStyle(TIER.LEGENDARY),
+        ]
+    ),
+    Show(
+        [
             Rarity(RARITY.RARE),
             UnidentifiedItemTier(),
-            TierStyle(TIER.COMMON),
+            TierStyle(TIER.LEGENDARY),
         ]
     ),
 ]

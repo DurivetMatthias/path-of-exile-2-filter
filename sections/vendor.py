@@ -1,7 +1,7 @@
-from app.conditions import Rarity, Sockets, Quality, MultiClass
-from app.actions import TierStyle
-from app.blocks import Show
-from app.categories import RARITY, TIER, OPERATOR, WEAPON, GEAR, OFFHAND, FLASK
+from app.blocks import *
+from app.actions import *
+from app.conditions import *
+from app.categories import *
 
 ARCANIST = [
     WEAPON.WAND,
@@ -41,12 +41,63 @@ GLASSBLOWER = [
 ]
 
 rules = [
-    # Show([Rarity(RARITY.MAGIC), TierStyle(TIER.COMMON)]),
-    # Show([Rarity(RARITY.RARE), TierStyle(TIER.COMMON)]),
-    # Show([Sockets("S", operator=OPERATOR.EXACT), TierStyle(TIER.COMMON)]),
-    # Show([Sockets("SS", operator=OPERATOR.EXACT), TierStyle(TIER.COMMON)]),
-    # Show([Quality(), MultiClass(MARTIAL), TierStyle(TIER.COMMON)]),
-    # Show([Quality(), MultiClass(ARCANIST), TierStyle(TIER.COMMON)]),
-    # Show([Quality(), MultiClass(ARMOUR), TierStyle(TIER.COMMON)]),
-    Show([Quality(), MultiClass(GLASSBLOWER), TierStyle(TIER.COMMON)]),
+    Show(
+        [
+            AreaLevel(10),
+            Rarity(RARITY.MAGIC),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show(
+        [
+            AreaLevel(30),
+            Rarity(RARITY.RARE),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show(
+        [
+            AreaLevel(10),
+            Sockets("S", operator=OPERATOR.EXACT),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show(
+        [
+            AreaLevel(10),
+            Sockets("SS", operator=OPERATOR.EXACT),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show(
+        [
+            AreaLevel(30),
+            Quality(),
+            MultiClass(MARTIAL),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    # Show(
+    #     [
+    #         AreaLevel(30),
+    #         Quality(),
+    #         MultiClass(ARCANIST),
+    #         TierStyle(TIER.COMMON),
+    #     ]
+    # ),
+    # Show(
+    #     [
+    #         AreaLevel(30),
+    #         Quality(),
+    #         MultiClass(ARMOUR),
+    #         TierStyle(TIER.COMMON),
+    #     ]
+    # ),
+    Show(
+        [
+            Quality(),
+            MultiClass(GLASSBLOWER),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
 ]
