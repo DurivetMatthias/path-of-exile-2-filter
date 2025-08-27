@@ -6,17 +6,15 @@ from app.categories import *
 rules = [
     Show(
         [
-            MultiClass(list(FLASK)),
+            MultiClass([FLASK.LIFE, FLASK.MANA]),
             TierStyle(TIER.COMMON),
-            Strictness(STRICTNESS.REGULAR),
         ]
     ),
     Show(
         [
-            MultiBaseType([LIFE_FLASK.ULTIMATE, MANA_FLASK.ULTIMATE]),
+            MultiBaseType(["Ultimate Life Flask", "Ultimate Mana Flask"]),
             Rarity(RARITY.MAGIC),
             TierStyle(TIER.COMMON),
-            Strictness(STRICTNESS.STRICT),
         ]
     ),
 ]

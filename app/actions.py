@@ -1,6 +1,6 @@
+from app import formatting
 from app.categories import *
 from app.conditions import *
-from app import formatting
 
 
 class PlayAlertSound(Condition):
@@ -114,12 +114,12 @@ class TierStyle(Condition):
         return formatting.format_conditions(child_conditions)
 
 
-class Strictness(Condition):
+class FilterLevel(Condition):
     def __init__(
         self,
-        strictness: STRICTNESS,
+        filter_level: FILTER_LEVEL,
     ):
-        self.strictness = strictness
+        self.filter_level = filter_level
 
     def __str__(self):
         # Used for filtering, should not appear as text in filter

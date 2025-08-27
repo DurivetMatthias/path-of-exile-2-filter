@@ -7,6 +7,7 @@ from sections import (
     jewel,
     other,
     socketable,
+    special,
     tiered,
     trial,
     unique,
@@ -14,7 +15,6 @@ from sections import (
     waystone,
     weapon,
     jewelry,
-    hide,
 )
 
 rules = [
@@ -22,7 +22,7 @@ rules = [
     *currency.rules,
     *flask.rules,
     *gem.rules,
-    *hide.rules,
+    *special.rules,
     *jewel.rules,
     *jewelry.rules,
     *other.rules,
