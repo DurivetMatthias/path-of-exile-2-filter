@@ -10,28 +10,28 @@ rules = [
         [
             MultiBaseType(list(LESSER_RUNE)),
             TierStyle(TIER.COMMON),
-            Strictness(STRICTNESS.REGULAR),
+            FilterLevel(FILTER_LEVEL.CAMPAIGN),
         ]
     ),
     Show(
         [
             MultiBaseType(list(RUNE)),
             TierStyle(TIER.COMMON),
-            Strictness(STRICTNESS.STRICT),
+            FilterLevel(FILTER_LEVEL.MAP_PROGRESSION),
         ]
     ),
     Show(
         [
             MultiBaseType(list(GREATER_RUNE)),
             TierStyle(TIER.LEGENDARY),
-            Strictness(STRICTNESS.UBER),
+            FilterLevel(FILTER_LEVEL.ENDGAME),
         ]
     ),
     Show(
         [
             BaseType("Rune of", operator=OPERATOR.EQUAL),
             TierStyle(TIER.LEGENDARY),
-            Strictness(STRICTNESS.UBER),
+            FilterLevel(FILTER_LEVEL.ENDGAME),
         ]
     ),
 ]

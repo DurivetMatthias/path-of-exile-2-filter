@@ -4,6 +4,12 @@ from app.conditions import *
 from app.categories import *
 
 rules = [
-    # Show all in starting area
-    Show([AreaLevel(1), TierStyle(TIER.COMMON)]),
+    # Show all early
+    Show(
+        [
+            AreaLevel(1),
+            TierStyle(TIER.COMMON),
+            FilterLevel(FILTER_LEVEL.CAMPAIGN),
+        ]
+    )
 ]

@@ -8,33 +8,38 @@ rules = [
         [
             MultiClass(list(JEWELRY)),
             TierStyle(TIER.EPIC),
-            Strictness(STRICTNESS.REGULAR),
+            FilterLevel(FILTER_LEVEL.CAMPAIGN),
+        ]
+    ),
+    Show(
+        [
+            MultiClass(["Belts"]),
+            TierStyle(TIER.EPIC),
         ]
     ),
     Show(
         [
             MultiBaseType(
                 [
-                    RING.RUBY,
-                    RING.SAPPHIRE,
-                    RING.TOPAZ,
-                    RING.BREACH,
-                    RING.PRISMATIC,
-                    RING.AMETHYST,
-                    RING.GOLD,
-                    AMULET.LAPIS,
-                    AMULET.JADE,
-                    AMULET.AMBER,
-                    AMULET.STELLAR,
-                    AMULET.SOLAR,
-                    AMULET.BLOODSTONE,
-                    AMULET.LUNAR,
-                    AMULET.GOLD,
-                    *list(BELT),
+                    "Ruby Ring",
+                    "Sapphire Ring",
+                    "Topaz Ring",
+                    "Breach Ring",
+                    "Prismatic Ring",
+                    "Amethyst Ring",
+                    "Gold Ring",
+                    "Lapis Amulet",
+                    "Jade Amulet",
+                    "Amber Amulet",
+                    "Stellar Amulet",
+                    "Solar Amulet",
+                    "Bloodstone Amulet",
+                    "Lunar Amulet",
+                    "Gold Amulet",
                 ]
             ),
             TierStyle(TIER.EPIC),
-            Strictness(STRICTNESS.UBER),
         ]
     ),
+    Hide([MultiClass(list(JEWELRY))]),
 ]

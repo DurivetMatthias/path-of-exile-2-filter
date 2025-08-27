@@ -18,4 +18,11 @@ rules = [
             TierStyle(TIER.LEGENDARY),
         ]
     ),
+    Show(
+        [
+            Rarity(RARITY.RARE),
+            BaseType("Exceptional", operator=OPERATOR.EQUAL),
+            TierStyle(TIER.LEGENDARY),
+        ]
+    ),
 ]

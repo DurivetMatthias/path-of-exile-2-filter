@@ -4,13 +4,25 @@ from app.conditions import *
 from app.categories import *
 
 config = {
+    # Tiered currency
     CURRENCY.TRANSMUTATION: TIER.COMMON,
+    CURRENCY.GREATER_TRANSMUTATION: TIER.EPIC,
+    CURRENCY.PERFECT_TRANSMUTATION: TIER.LEGENDARY,
     CURRENCY.AUGMENTATION: TIER.COMMON,
+    CURRENCY.GREATER_AUGMENTATION: TIER.EPIC,
+    CURRENCY.PERFECT_AUGMENTATION: TIER.LEGENDARY,
     CURRENCY.REGAL: TIER.EPIC,
+    CURRENCY.GREATER_REGAL: TIER.EPIC,
+    CURRENCY.PERFECT_REGAL: TIER.LEGENDARY,
+    CURRENCY.CHAOS: TIER.LEGENDARY,
+    CURRENCY.GREATER_CHAOS: TIER.EPIC,
+    CURRENCY.PERFECT_CHAOS: TIER.LEGENDARY,
+    CURRENCY.EXALTED: TIER.LEGENDARY,
+    CURRENCY.GREATER_EXALTED: TIER.EPIC,
+    CURRENCY.PERFECT_EXALTED: TIER.LEGENDARY,
+    # Other
     CURRENCY.VAAL: TIER.EPIC,
     CURRENCY.ALCHEMY: TIER.LEGENDARY,
-    CURRENCY.CHAOS: TIER.LEGENDARY,
-    CURRENCY.EXALTED: TIER.LEGENDARY,
     CURRENCY.ANNULMENT: TIER.LEGENDARY,
     CURRENCY.CHANCE: TIER.LEGENDARY,
     CURRENCY.DIVINE: TIER.LEGENDARY,
@@ -36,43 +48,41 @@ currency_rules = [
 ]
 
 rules = [
+    *currency_rules,
     Show(
         [
             MultiBaseType(list(CURRENCY)),
             TierStyle(TIER.COMMON),
-            Strictness(STRICTNESS.REGULAR),
+            FilterLevel(FILTER_LEVEL.CAMPAIGN),
         ]
     ),
-    *currency_rules,
+    Show(
+        [
+            AreaLevel(20),
+            StackSize(1),
+            BaseType("Gold"),
+            FilterLevel(FILTER_LEVEL.CAMPAIGN),
+        ]
+    ),
     Show(
         [
             BaseType("Gold"),
             StackSize(100),
-            TierStyle(TIER.COMMON),
-            Strictness(STRICTNESS.REGULAR),
+            FilterLevel(FILTER_LEVEL.CAMPAIGN),
         ]
     ),
     Show(
         [
             BaseType("Gold"),
             StackSize(300),
-            TierStyle(TIER.COMMON),
-            Strictness(STRICTNESS.STRICT),
+            FilterLevel(FILTER_LEVEL.MAP_PROGRESSION),
         ]
     ),
     Show(
         [
             BaseType("Gold"),
             StackSize(500),
-            TierStyle(TIER.COMMON),
-            Strictness(STRICTNESS.UBER),
-        ]
-    ),
-    Show(
-        [
-            BaseType("Gold"),
-            AreaLevel(20),
-            TierStyle(TIER.COMMON),
+            FilterLevel(FILTER_LEVEL.ENDGAME),
         ]
     ),
     Hide([BaseType("Gold")]),

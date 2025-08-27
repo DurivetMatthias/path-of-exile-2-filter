@@ -48,6 +48,32 @@ class PlayEffect(Condition):
         """
 
 
+class SetFontSize(Condition):
+    def __init__(
+        self,
+        size: FONT_SIZE,
+    ):
+        self.size = size
+
+    def __str__(self):
+        return f"""
+            SetFontSize {self.size}
+        """
+
+
+class SetTextColor(Condition):
+    def __init__(
+        self,
+        rgb: RGB,
+    ):
+        self.rgb = rgb
+
+    def __str__(self):
+        return f"""
+            SetTextColor {self.rgb}
+        """
+
+
 class SetBorderColor(Condition):
     def __init__(
         self,
@@ -61,16 +87,16 @@ class SetBorderColor(Condition):
         """
 
 
-class SetFontSize(Condition):
+class SetBackgroundColor(Condition):
     def __init__(
         self,
-        size: FONT_SIZE,
+        rgb: RGB,
     ):
-        self.size = size
+        self.rgb = rgb
 
     def __str__(self):
         return f"""
-            SetFontSize {self.size}
+            SetBackgroundColor {self.rgb}
         """
 
 

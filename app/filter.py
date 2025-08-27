@@ -21,40 +21,40 @@ if not FILTER_OUTPUT_PATH.exists():
     FILTER_OUTPUT_PATH = Path(".")
 
 
-def divide_by_strictness(rules: list[Block]):
-    """Create multiple lists of rules based on strictness"""
-    regular_rules = []
-    strict_rules = []
-    uber_rules = []
+def divide_by_filter_level(rules: list[Block]):
+    """Create multiple lists of rules based on filter level"""
+    campaign_rules = []
+    map_progression_rules = []
+    endgame_rules = []
 
-    # If it's marked as regular is should only appear in the regular filter
-    # If it's marked as strict it should appear in the strict and lower filters
-    # If it's marked as uber it should appear in the uber and lower filters
+    # If it's marked as campaign is should only appear in the campaign filter
+    # If it's marked as map_progression it should appear in the map_progression and lower filters
+    # If it's marked as endgame it should appear in the endgame and lower filters
     # If it's unmarked it should appear in all filters
     for rule in rules:
         if not any(
-            [isinstance(condition, Strictness) for condition in rule.conditions]
+            [isinstance(condition, FilterLevel) for condition in rule.conditions]
         ):
-            regular_rules.append(rule)
-            strict_rules.append(rule)
-            uber_rules.append(rule)
+            campaign_rules.append(rule)
+            map_progression_rules.append(rule)
+            endgame_rules.append(rule)
             continue
 
         for condition in rule.conditions:
-            if isinstance(condition, Strictness):
-                if condition.strictness == STRICTNESS.REGULAR:
-                    regular_rules.append(rule)
-                if condition.strictness == STRICTNESS.STRICT:
-                    regular_rules.append(rule)
-                    strict_rules.append(rule)
-                if condition.strictness == STRICTNESS.UBER:
-                    regular_rules.append(rule)
-                    strict_rules.append(rule)
-                    uber_rules.append(rule)
+            if isinstance(condition, FilterLevel):
+                if condition.filter_level == FILTER_LEVEL.CAMPAIGN:
+                    campaign_rules.append(rule)
+                if condition.filter_level == FILTER_LEVEL.MAP_PROGRESSION:
+                    campaign_rules.append(rule)
+                    map_progression_rules.append(rule)
+                if condition.filter_level == FILTER_LEVEL.ENDGAME:
+                    campaign_rules.append(rule)
+                    map_progression_rules.append(rule)
+                    endgame_rules.append(rule)
     return {
-        f"regular.{FILTER_EXTENSION}": regular_rules,
-        f"strict.{FILTER_EXTENSION}": strict_rules,
-        f"uber.{FILTER_EXTENSION}": uber_rules,
+        f"campaign.{FILTER_EXTENSION}": campaign_rules,
+        f"map_progression.{FILTER_EXTENSION}": map_progression_rules,
+        f"endgame.{FILTER_EXTENSION}": endgame_rules,
     }
 
 
@@ -91,7 +91,7 @@ def generate(*, rules: list[Block]):
         # The following item filter was automatically generated.
         # Created on {datetime.datetime.now().strftime("%A %B %d %Y, %H:%M:%S")}.
     """
-    filter_files = divide_by_strictness(rules)
+    filter_files = divide_by_filter_level(rules)
     for filter_filename, filter_rules in filter_files.items():
         sorted_rules = sort_rules(filter_rules)
         file_content = formatting.format_filter(

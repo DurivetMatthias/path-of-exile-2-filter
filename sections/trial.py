@@ -11,7 +11,7 @@ rules = [
             BaseType(TRIAL.BARYA),
             TierStyle(TIER.LEGENDARY),
             ItemLevel(44),
-            Strictness(STRICTNESS.REGULAR),
+            FilterLevel(FILTER_LEVEL.CAMPAIGN),
         ]
     ),
     Show(
@@ -19,7 +19,7 @@ rules = [
             BaseType(TRIAL.BARYA),
             TierStyle(TIER.LEGENDARY),
             ItemLevel(59),
-            Strictness(STRICTNESS.REGULAR),
+            FilterLevel(FILTER_LEVEL.CAMPAIGN),
         ]
     ),
     Show(
@@ -27,7 +27,7 @@ rules = [
             BaseType(TRIAL.BARYA),
             TierStyle(TIER.LEGENDARY),
             ItemLevel(63),
-            Strictness(STRICTNESS.REGULAR),
+            FilterLevel(FILTER_LEVEL.CAMPAIGN),
         ]
     ),
     Show(
@@ -35,7 +35,7 @@ rules = [
             BaseType(TRIAL.BARYA),
             TierStyle(TIER.LEGENDARY),
             ItemLevel(75),
-            Strictness(STRICTNESS.UBER),
+            FilterLevel(FILTER_LEVEL.ENDGAME),
         ]
     ),
     # Trial of Corruption
@@ -44,7 +44,7 @@ rules = [
             BaseType(TRIAL.ULTIMATUM),
             TierStyle(TIER.LEGENDARY),
             ItemLevel(59),
-            Strictness(STRICTNESS.REGULAR),
+            FilterLevel(FILTER_LEVEL.CAMPAIGN),
         ]
     ),
     Show(
@@ -52,7 +52,7 @@ rules = [
             BaseType(TRIAL.ULTIMATUM),
             TierStyle(TIER.LEGENDARY),
             ItemLevel(63),
-            Strictness(STRICTNESS.REGULAR),
+            FilterLevel(FILTER_LEVEL.CAMPAIGN),
         ]
     ),
     Show(
@@ -60,7 +60,7 @@ rules = [
             BaseType(TRIAL.ULTIMATUM),
             TierStyle(TIER.LEGENDARY),
             ItemLevel(75),
-            Strictness(STRICTNESS.UBER),
+            FilterLevel(FILTER_LEVEL.ENDGAME),
         ]
     ),
 ]

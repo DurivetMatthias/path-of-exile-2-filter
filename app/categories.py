@@ -84,20 +84,6 @@ class FONT_SIZE(StrEnum):
     LARGE = "45"
 
 
-class RARITY(StrEnum):
-    NORMAL = "normal"
-    MAGIC = "magic"
-    RARE = "rare"
-    UNIQUE = "unique"
-
-
-class TIER(StrEnum):
-    COMMON = "COMMON"
-    RARE = "RARE"
-    EPIC = "EPIC"
-    LEGENDARY = "LEGENDARY"
-
-
 class OPERATOR(StrEnum):
     GT = ">"
     LT = "<"
@@ -106,6 +92,23 @@ class OPERATOR(StrEnum):
     EQUAL = "="
     EXACT = "=="
     NOT_EQUAL = "!="
+
+
+class RARITY(StrEnum):
+    NORMAL = "normal"
+    MAGIC = "magic"
+    RARE = "rare"
+    UNIQUE = "unique"
+
+
+# Custom definitions
+
+
+class TIER(StrEnum):
+    COMMON = "COMMON"
+    RARE = "RARE"
+    EPIC = "EPIC"
+    LEGENDARY = "LEGENDARY"
 
 
 class ARMOUR(StrEnum):
@@ -314,7 +317,7 @@ class SOUL_CORE(StrEnum):
 
 
 class CURRENCY(StrEnum):
-    # https://poe2db.tw/us/Currency#CurrencyItem
+    # https://poe2db.tw/us/Stackable_Currency
     WISDOM = "Scroll of Wisdom"
 
     TRANSMUTATION = "Orb of Transmutation"

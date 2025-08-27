@@ -7,7 +7,8 @@ rules = [
     Show(
         [
             MultiClass([FLASK.LIFE, FLASK.MANA]),
-            TierStyle(TIER.COMMON),
+            TierStyle(TIER.RARE),
+            FilterLevel(FILTER_LEVEL.CAMPAIGN),
         ]
     ),
     Show(
@@ -15,6 +16,8 @@ rules = [
             MultiBaseType(["Ultimate Life Flask", "Ultimate Mana Flask"]),
             Rarity(RARITY.MAGIC),
             TierStyle(TIER.COMMON),
+            FilterLevel(FILTER_LEVEL.MAP_PROGRESSION),
         ]
     ),
+    Hide([MultiClass([FLASK.LIFE, FLASK.MANA])]),
 ]

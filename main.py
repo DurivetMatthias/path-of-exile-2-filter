@@ -1,8 +1,8 @@
 from app import filter
 from sections import (
-    armour,
     currency,
     flask,
+    gear,
     gem,
     jewel,
     other,
@@ -13,12 +13,11 @@ from sections import (
     unique,
     vendor,
     waystone,
-    weapon,
     jewelry,
 )
 
 rules = [
-    *armour.rules,
+    *gear.rules,
     *currency.rules,
     *flask.rules,
     *gem.rules,
@@ -32,7 +31,6 @@ rules = [
     *unique.rules,
     *vendor.rules,
     *waystone.rules,
-    *weapon.rules,
 ]
 
 filter.generate(rules=rules)
