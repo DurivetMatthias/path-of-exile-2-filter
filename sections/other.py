@@ -11,7 +11,7 @@ class AbyssStyle(Condition):
         return formatting.format_conditions(
             [
                 PlayEffect(color),
-                SetTextColor(rgb),
+                SetTextColor(RGB.WHITE),
                 SetBorderColor(rgb),
                 SetBackgroundColor(rgb),
                 SetFontSize(FONT_SIZE.LARGE),
@@ -28,7 +28,7 @@ class ExpeditionStyle(Condition):
         return formatting.format_conditions(
             [
                 PlayEffect(color),
-                SetTextColor(rgb),
+                SetTextColor(RGB.WHITE),
                 SetBorderColor(rgb),
                 SetBackgroundColor(rgb),
                 SetFontSize(FONT_SIZE.LARGE),
@@ -45,7 +45,7 @@ class RitualStyle(Condition):
         return formatting.format_conditions(
             [
                 PlayEffect(color),
-                SetTextColor(rgb),
+                SetTextColor(RGB.WHITE),
                 SetBorderColor(rgb),
                 SetBackgroundColor(rgb),
                 SetFontSize(FONT_SIZE.LARGE),
@@ -62,7 +62,7 @@ class BreachStyle(Condition):
         return formatting.format_conditions(
             [
                 PlayEffect(color),
-                SetTextColor(rgb),
+                SetTextColor(RGB.WHITE),
                 SetBorderColor(rgb),
                 SetBackgroundColor(rgb),
                 SetFontSize(FONT_SIZE.LARGE),
@@ -79,7 +79,7 @@ class DeliriumStyle(Condition):
         return formatting.format_conditions(
             [
                 PlayEffect(color),
-                SetTextColor(rgb),
+                SetTextColor(RGB.WHITE),
                 SetBorderColor(rgb),
                 SetBackgroundColor(rgb),
                 SetFontSize(FONT_SIZE.LARGE),
@@ -92,22 +92,49 @@ class DeliriumStyle(Condition):
 rules = [
     # Quest items
     Show([Class("Quest Items"), TierStyle(TIER.COMMON)]),
+    Show([Class("Instance Local Items"), TierStyle(TIER.COMMON)]),
     # Custom Styles
     Show([MultiBaseType(list(OMEN)), RitualStyle()]),
     Show([MultiBaseType(list(ABYSS)), AbyssStyle()]),
     Show([MultiBaseType(list(CATALYST)), BreachStyle()]),
     Show([MultiBaseType(list(EMOTION)), DeliriumStyle()]),
     Show([MultiBaseType(list(EXPEDITION)), ExpeditionStyle()]),
+    Show([MultiBaseType([EXPEDITION.LOGBOOK]), TierStyle(TIER.LEGENDARY)]),
     # Essence
-    Show([MultiBaseType(list(ESSENCE)), TierStyle(TIER.LEGENDARY)]),
-    Show([MultiBaseType(list(LESSER_ESSENCE)), TierStyle(TIER.LEGENDARY)]),
-    Show([MultiBaseType(list(GREATER_ESSENCE)), TierStyle(TIER.LEGENDARY)]),
-    Show([MultiBaseType(list(PERFECT_ESSENCE)), TierStyle(TIER.LEGENDARY)]),
+    Show([MultiBaseType(list(LESSER_ESSENCE)), TierStyle(TIER.COMMON)]),
+    Show([MultiBaseType(list(ESSENCE)), TierStyle(TIER.COMMON)]),
+    Show([MultiBaseType(list(GREATER_ESSENCE)), TierStyle(TIER.RARE)]),
+    Show([MultiBaseType(list(PERFECT_ESSENCE)), TierStyle(TIER.RARE)]),
     Show([MultiBaseType(list(CORRUPT_ESSENCE)), TierStyle(TIER.LEGENDARY)]),
     # Other
-    Show([MultiBaseType(list(RELIC)), TierStyle(TIER.LEGENDARY)]),
-    Show([MultiBaseType(list(TABLET)), TierStyle(TIER.LEGENDARY)]),
+    Show(
+        [
+            MultiBaseType(
+                [
+                    RELIC.URN,
+                    RELIC.SEAL,
+                    RELIC.VASE,
+                    RELIC.INCENSE,
+                    RELIC.COFFER,
+                ]
+            ),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show([MultiBaseType(list(TABLET)), TierStyle(TIER.EPIC)]),
+    Show([MultiBaseType(list(TRIAL)), TierStyle(TIER.COMMON)]),
+    Show([MultiBaseType(list(INVITATION)), TierStyle(TIER.EPIC)]),
     Show([MultiBaseType(list(SEKHEMA_KEY)), TierStyle(TIER.COMMON)]),
-    Show([MultiBaseType(list(INVITATION)), TierStyle(TIER.LEGENDARY)]),
     Show([MultiBaseType(list(RELIQUARY_KEY)), TierStyle(TIER.LEGENDARY)]),
+    Show([MultiBaseType(list(TALISMAN)), TierStyle(TIER.EPIC)]),
+    Show([MultiBaseType(list(SOUL_CORE)), TierStyle(TIER.LEGENDARY)]),
+    Show([MultiBaseType(list(LESSER_RUNE)), TierStyle(TIER.COMMON)]),
+    Show([MultiBaseType(list(RUNE)), TierStyle(TIER.COMMON)]),
+    Show([MultiBaseType(list(GREATER_RUNE)), TierStyle(TIER.COMMON)]),
+    Show(
+        [
+            BaseType("Rune of", operator=OPERATOR.EQUAL),
+            TierStyle(TIER.LEGENDARY),
+        ]
+    ),
 ]

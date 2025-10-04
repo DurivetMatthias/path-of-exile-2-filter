@@ -6,16 +6,43 @@ from app.categories import *
 rules = [
     Show(
         [
-            MultiBaseType([GEM.SKILL, GEM.SUPPORT, GEM.SPIRIT]),
+            MultiClass(
+                [
+                    GEM.SKILL,
+                    GEM.SUPPORT,
+                    GEM.SPIRIT,
+                ]
+            ),
+            TierStyle(TIER.RARE),
+        ]
+    ),
+    # Lineage Support
+    Show(
+        [
+            MultiClass(["Support Gems"]),
             TierStyle(TIER.LEGENDARY),
-            FilterLevel(FILTER_LEVEL.CAMPAIGN),
+        ]
+    ),
+    # 18+ uncut gems
+    Show(
+        [
+            MultiClass([GEM.SKILL, GEM.SPIRIT]),
+            BaseType("Level 18", operator=OPERATOR.EQUAL),
+            TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show(
         [
-            MultiBaseType([GEM.SKILL, GEM.SUPPORT, GEM.SPIRIT]),
-            TierStyle(TIER.COMMON),
-            FilterLevel(FILTER_LEVEL.MAP_PROGRESSION),
+            MultiClass([GEM.SKILL, GEM.SPIRIT]),
+            BaseType("Level 19", operator=OPERATOR.EQUAL),
+            TierStyle(TIER.LEGENDARY),
+        ]
+    ),
+    Show(
+        [
+            MultiClass([GEM.SKILL, GEM.SPIRIT]),
+            BaseType("Level 20", operator=OPERATOR.EQUAL),
+            TierStyle(TIER.LEGENDARY),
         ]
     ),
 ]

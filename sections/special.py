@@ -9,7 +9,6 @@ rules = [
         [
             AreaLevel(1),
             TierStyle(TIER.COMMON),
-            FilterLevel(FILTER_LEVEL.CAMPAIGN),
         ]
     )
 ]

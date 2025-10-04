@@ -138,15 +138,3 @@ class TierStyle(Condition):
         ]
 
         return formatting.format_conditions(child_conditions)
-
-
-class FilterLevel(Condition):
-    def __init__(
-        self,
-        filter_level: FILTER_LEVEL,
-    ):
-        self.filter_level = filter_level
-
-    def __str__(self):
-        # Used for filtering, should not appear as text in filter
-        return ""

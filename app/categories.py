@@ -181,9 +181,9 @@ class JEWEL(StrEnum):
 
 
 class GEM(StrEnum):
-    SKILL = "Uncut Skill Gem"
-    SPIRIT = "Uncut Spirit Gem"
-    SUPPORT = "Uncut Support Gem"
+    SKILL = "Uncut Skill Gems"
+    SPIRIT = "Uncut Spirit Gems"
+    SUPPORT = "Uncut Support Gems"
 
 
 class LINEAGE_SUPPORT(StrEnum):
@@ -345,9 +345,10 @@ class CURRENCY(StrEnum):
 
     DIVINE = "Divine Orb"
     CHANCE = "Orb of Chance"
-    MIRROR = "Mirror of Kalandra"
     FRACTURING = "Fracturing Orb"
     ANNULMENT = "Orb of Annulment"
+    MIRROR = "Mirror of Kalandra"
+    HINEKORA = "Hinekora's Lock"
 
     ARCANIST = "Arcanist's Etcher"
     ARMOURER = "Armourer's Scrap"
@@ -403,8 +404,6 @@ class ABYSS(StrEnum):
     ULAMAN_GAZE = "Ulaman's Gaze"
     AMANAMU_GAZE = "Amanamu's Gaze"
     KULEMAKS_INVITATION = "Kulemak's Invitation"
-
-    RING = "Abyssal Signet"
 
 
 class RELIC(StrEnum):
@@ -526,16 +525,16 @@ class CORRUPT_ESSENCE(StrEnum):
 
 
 class EMOTION(StrEnum):
-    IRE = "Distilled Ire"
-    ENVY = "Distilled Envy"
-    FEAR = "Distilled Fear"
-    GREED = "Distilled Greed"
-    GUILT = "Distilled Guilt"
-    DESPAIR = "Distilled Despair"
-    DISGUST = "Distilled Disgust"
-    PARANOIA = "Distilled Paranoia"
-    ISOLATION = "Distilled Isolation"
-    SUFFERING = "Distilled Suffering"
+    IRE = "Diluted Liquid Ire"
+    ENVY = "Liquid Envy"
+    FEAR = "Concentrated Liquid Fear"
+    GREED = "Diluted Liquid Greed"
+    GUILT = "Diluted Liquid Guilt"
+    DESPAIR = "Liquid Despair"
+    DISGUST = "Liquid Disgust"
+    PARANOIA = "Liquid Paranoia"
+    ISOLATION = "Concentrated Liquid Isolation"
+    SUFFERING = "Concentrated Liquid Suffering"
 
 
 class CATALYST(StrEnum):
@@ -614,6 +613,10 @@ class INVITATION(StrEnum):
     SECONDARY_CALAMITY = "Secondary Calamity Fragment"
     TERTIARY_CALAMITY = "Tertiary Calamity Fragment"
 
+    DEADLY_FATE = "Deadly Fate"
+    COWARDLY_FATE = "Cowardly Fate"
+    VICTORIOUS_FATE = "Victorious Fate"
+
 
 class TRIAL(StrEnum):
     BARYA = "Djinn Barya"
@@ -629,9 +632,3 @@ class RELIQUARY_KEY(StrEnum):
     ARBITER = "The Arbiter's Reliquary Key"
     RITUALISTIC = "Ritualistic Reliquary Key"
     TRIALMASTER = "The Trialmaster's Reliquary Key"
-
-
-class FILTER_LEVEL(StrEnum):
-    CAMPAIGN = "campaign"
-    MAP_PROGRESSION = "map progression"
-    ENDGAME = "endgame"

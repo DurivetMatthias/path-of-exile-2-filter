@@ -8,7 +8,7 @@ rules = [
         [
             MultiBaseType(
                 [
-                    JEWEL.RUBY,
+                    # JEWEL.RUBY,
                     JEWEL.EMERALD,
                     JEWEL.SAPPHIRE,
                 ]
@@ -28,5 +28,4 @@ rules = [
             TierStyle(TIER.LEGENDARY),
         ]
     ),
-    Show([Class("Jewels"), TierStyle(TIER.LEGENDARY)]),
 ]

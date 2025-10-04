@@ -379,7 +379,7 @@ class SocketGroup(Condition):
 class Sockets(Condition):
     def __init__(
         self,
-        value: str,
+        value: int,
         operator: OPERATOR = OPERATOR.GTE,
     ):
         self.value = value
@@ -476,9 +476,6 @@ class Width(Condition):
         """
 
 
-# CUSTOM conditions
-
-
 class PureArmour(Condition):
     def __str__(self):
         return """
@@ -506,7 +503,7 @@ class PureEnergyShield(Condition):
         """
 
 
-class MixedArmourEvasion(Condition):
+class HybridArmourEvasion(Condition):
     def __str__(self):
         return """
             BaseArmour >= 1
@@ -515,7 +512,7 @@ class MixedArmourEvasion(Condition):
         """
 
 
-class MixedArmourEnergyShield(Condition):
+class HybridArmourEnergyShield(Condition):
     def __str__(self):
         return """
             BaseArmour >= 1
@@ -524,7 +521,7 @@ class MixedArmourEnergyShield(Condition):
         """
 
 
-class MixedEvasionEnergyShield(Condition):
+class HybridEvasionEnergyShield(Condition):
     def __str__(self):
         return """
             BaseArmour == 0

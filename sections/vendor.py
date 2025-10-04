@@ -25,9 +25,16 @@ GLASSBLOWER = [
 rules = [
     Show(
         [
+            AreaLevel(45),
             Rarity(RARITY.RARE),
             VendorStyle(),
-            FilterLevel(FILTER_LEVEL.CAMPAIGN),
+        ]
+    ),
+    Show(
+        [
+            AreaLevel(45),
+            Quality(),
+            VendorStyle(),
         ]
     ),
     Show(

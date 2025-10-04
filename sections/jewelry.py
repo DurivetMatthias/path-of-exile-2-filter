@@ -7,37 +7,15 @@ rules = [
     Show(
         [
             MultiClass(list(JEWELRY)),
-            TierStyle(TIER.EPIC),
-            FilterLevel(FILTER_LEVEL.CAMPAIGN),
+            TierStyle(TIER.RARE),
         ]
     ),
+    Show([MultiBaseType(["Breach Ring"]), TierStyle(TIER.EPIC)]),
     Show(
         [
-            MultiClass(["Belts"]),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Show(
-        [
-            MultiBaseType(
-                [
-                    "Ruby Ring",
-                    "Sapphire Ring",
-                    "Topaz Ring",
-                    "Breach Ring",
-                    "Prismatic Ring",
-                    "Amethyst Ring",
-                    "Gold Ring",
-                    "Lapis Amulet",
-                    "Jade Amulet",
-                    "Amber Amulet",
-                    "Stellar Amulet",
-                    "Solar Amulet",
-                    "Bloodstone Amulet",
-                    "Lunar Amulet",
-                    "Gold Amulet",
-                ]
-            ),
+            MultiBaseType(["Gold Ring", "Pearl Ring", "Solar Amulet", "Gold Amulet"]),
+            ItemLevel(75),
+            Rarity(RARITY.NORMAL),
             TierStyle(TIER.EPIC),
         ]
     ),

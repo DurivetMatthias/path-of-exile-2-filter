@@ -21,43 +21,6 @@ if not FILTER_OUTPUT_PATH.exists():
     FILTER_OUTPUT_PATH = Path(".")
 
 
-def divide_by_filter_level(rules: list[Block]):
-    """Create multiple lists of rules based on filter level"""
-    campaign_rules = []
-    map_progression_rules = []
-    endgame_rules = []
-
-    # If it's marked as campaign is should only appear in the campaign filter
-    # If it's marked as map_progression it should appear in the map_progression and lower filters
-    # If it's marked as endgame it should appear in the endgame and lower filters
-    # If it's unmarked it should appear in all filters
-    for rule in rules:
-        if not any(
-            [isinstance(condition, FilterLevel) for condition in rule.conditions]
-        ):
-            campaign_rules.append(rule)
-            map_progression_rules.append(rule)
-            endgame_rules.append(rule)
-            continue
-
-        for condition in rule.conditions:
-            if isinstance(condition, FilterLevel):
-                if condition.filter_level == FILTER_LEVEL.CAMPAIGN:
-                    campaign_rules.append(rule)
-                if condition.filter_level == FILTER_LEVEL.MAP_PROGRESSION:
-                    campaign_rules.append(rule)
-                    map_progression_rules.append(rule)
-                if condition.filter_level == FILTER_LEVEL.ENDGAME:
-                    campaign_rules.append(rule)
-                    map_progression_rules.append(rule)
-                    endgame_rules.append(rule)
-    return {
-        f"campaign.{FILTER_EXTENSION}": campaign_rules,
-        f"map_progression.{FILTER_EXTENSION}": map_progression_rules,
-        f"endgame.{FILTER_EXTENSION}": endgame_rules,
-    }
-
-
 def sort_by_tierstyle(block: Block):
     """Sort by importance based on TierStyle"""
     tier = None
@@ -91,18 +54,18 @@ def generate(*, rules: list[Block]):
         # The following item filter was automatically generated.
         # Created on {datetime.datetime.now().strftime("%A %B %d %Y, %H:%M:%S")}.
     """
-    filter_files = divide_by_filter_level(rules)
-    for filter_filename, filter_rules in filter_files.items():
-        sorted_rules = sort_rules(filter_rules)
-        file_content = formatting.format_filter(
-            rules=sorted_rules,
-            header=header,
-        )
-        output_filepath = os.path.join(FILTER_OUTPUT_PATH, filter_filename)
-        with open(output_filepath, mode="w", encoding="utf-8") as output_file:
-            output_file.write(file_content)
-        divider = "-" * 10
-        print(divider)
-        print("Inspect the item filter:")
-        print(output_filepath)
-        print(divider)
+    sorted_rules = sort_rules(rules)
+    file_content = formatting.format_filter(
+        rules=sorted_rules,
+        header=header,
+    )
+    output_filepath = os.path.join(FILTER_OUTPUT_PATH, f"main.{FILTER_EXTENSION}")
+    with open(output_filepath, mode="w", encoding="utf-8") as output_file:
+        output_file.write(file_content)
+    print()
+    print()
+    print()
+    print(output_filepath)
+    print()
+    print()
+    print()

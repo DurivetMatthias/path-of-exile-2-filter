@@ -4,64 +4,62 @@ from app.conditions import *
 from app.categories import *
 
 rules = [
-    # Show all gear since no attribute requirement
+    # Show magic boots
     Show(
         [
             AreaLevel(11),
-            MultiClass([ARMOUR.BOOTS, ARMOUR.GLOVES, ARMOUR.HELMET, ARMOUR.BODY]),
+            MultiClass([ARMOUR.BOOTS]),
+            Rarity(RARITY.MAGIC),
             TierStyle(TIER.COMMON),
-            FilterLevel(FILTER_LEVEL.CAMPAIGN),
         ]
     ),
-    # Stomping ground
+    # Show caster gear
     Show(
         [
-            MultiClass([ARMOUR.BOOTS, ARMOUR.GLOVES, ARMOUR.HELMET, ARMOUR.BODY]),
-            PureArmour(),
-            TierStyle(TIER.EPIC),
-            FilterLevel(FILTER_LEVEL.CAMPAIGN),
-        ]
-    ),
-    Show(
-        [
-            MultiClass([WEAPON.SPEAR]),
-            TierStyle(TIER.EPIC),
-            FilterLevel(FILTER_LEVEL.CAMPAIGN),
+            MultiClass(list(ARMOUR)),
+            PureEnergyShield(),
+            TierStyle(TIER.RARE),
         ]
     ),
     Show(
         [
-            MultiClass([OFFHAND.SHIELD]),
-            PureArmour(),
-            TierStyle(TIER.EPIC),
-            FilterLevel(FILTER_LEVEL.CAMPAIGN),
+            MultiClass([WEAPON.WAND, OFFHAND.FOCUS]),
+            TierStyle(TIER.RARE),
         ]
     ),
-    # Real build?
+    # Exceptional
     Show(
         [
-            MultiClass([WEAPON.BOW, OFFHAND.QUIVER, WEAPON.QUARTERSTAFF]),
-            TierStyle(TIER.EPIC),
-            FilterLevel(FILTER_LEVEL.MAP_PROGRESSION),
-        ]
-    ),
-    Show(
-        [
-            MultiClass([ARMOUR.BOOTS, ARMOUR.GLOVES, ARMOUR.HELMET, ARMOUR.BODY]),
-            PureEvasion(),
-            TierStyle(TIER.EPIC),
-            FilterLevel(FILTER_LEVEL.MAP_PROGRESSION),
+            MultiClass([WEAPON.WAND, OFFHAND.FOCUS]),
+            Quality(21),
+            TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show(
         [
-            MultiBaseType(["Thawing Charm", "Silver Charm", "Golden Charm"]),
-            TierStyle(TIER.EPIC),
-            FilterLevel(FILTER_LEVEL.ENDGAME),
+            MultiClass([ARMOUR.BODY]),
+            Sockets(3),
+            TierStyle(TIER.LEGENDARY),
+        ]
+    ),
+    Show(
+        [
+            MultiClass(
+                [
+                    ARMOUR.HELMET,
+                    ARMOUR.BOOTS,
+                    ARMOUR.GLOVES,
+                    WEAPON.WAND,
+                    OFFHAND.FOCUS,
+                ]
+            ),
+            Sockets(2),
+            TierStyle(TIER.LEGENDARY),
         ]
     ),
     # Hide the rest
     Hide([MultiClass(list(ARMOUR))]),
     Hide([MultiClass(list(WEAPON))]),
     Hide([MultiClass(list(OFFHAND))]),
+    Hide([MultiClass(["Charms"])]),
 ]
