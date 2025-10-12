@@ -23,8 +23,8 @@ shared_config = {
     CURRENCY.PERFECT_CHAOS: TIER.LEGENDARY,
     # Shard
     CURRENCY.CHANCE_SHARD: TIER.RARE,
-    CURRENCY.REGAL_SHARD: TIER.COMMON,
-    CURRENCY.ARTIFICERS_SHARD: TIER.RARE,
+    # CURRENCY.REGAL_SHARD: TIER.COMMON,
+    # CURRENCY.ARTIFICERS_SHARD: TIER.RARE,
     # quality
     CURRENCY.ARTIFICER: TIER.RARE,
     CURRENCY.GEMCUTTER: TIER.EPIC,
@@ -33,8 +33,8 @@ shared_config = {
     CURRENCY.BLACKSMITH: TIER.COMMON,
     CURRENCY.GLASSBLOWER: TIER.COMMON,
     # Socket
-    CURRENCY.LESSER_JEWELLER: TIER.LEGENDARY,
-    CURRENCY.GREATER_JEWELLER: TIER.LEGENDARY,
+    # CURRENCY.LESSER_JEWELLER: TIER.COMMON,
+    CURRENCY.GREATER_JEWELLER: TIER.RARE,
     CURRENCY.PERFECT_JEWELLER: TIER.LEGENDARY,
     # Other
     CURRENCY.VAAL: TIER.EPIC,
@@ -53,5 +53,5 @@ rules.extend(
     Show([BaseType(currency), TierStyle(tier)])
     for currency, tier in shared_config.items()
 )
-rules.append(Show([AreaLevel(9), BaseType(CURRENCY.WISDOM)]))
-rules.append(Hide([MultiBaseType(["Gold"])]))
+
+rules.append(Hide([MultiBaseType(["Gold", CURRENCY.WISDOM, CURRENCY.REGAL_SHARD])]))

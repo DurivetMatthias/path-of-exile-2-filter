@@ -9,11 +9,11 @@ rules = [
             MultiBaseType(
                 [
                     # JEWEL.RUBY,
-                    JEWEL.EMERALD,
+                    # JEWEL.EMERALD,
                     JEWEL.SAPPHIRE,
                 ]
             ),
-            TierStyle(TIER.LEGENDARY),
+            TierStyle(TIER.RARE),
         ]
     ),
     Show(

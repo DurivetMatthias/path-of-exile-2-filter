@@ -4,7 +4,8 @@ from app.conditions import *
 from app.categories import *
 
 bases = [
-    # "Gold Ring",  # Ventor's Gamble
+    "Gold Ring",  # Ventor's Gamble
+    "Gold Circlet",  # Atziri's Disdain
     "Heavy Belt",  # Headhunter
 ]
 

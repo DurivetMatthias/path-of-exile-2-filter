@@ -16,15 +16,45 @@ rules = [
     # Show caster gear
     Show(
         [
-            MultiClass(list(ARMOUR)),
-            PureEnergyShield(),
-            TierStyle(TIER.RARE),
+            MultiBaseType(
+                [
+                    "Vile Robe",
+                    "Ancestral Tiara",
+                    "Sekhema Sandals",
+                    "Sirenscale Gloves",
+                ]
+            ),
+            ItemLevel(79),
+            Rarity(RARITY.NORMAL),
+            TierStyle(TIER.EPIC),
         ]
     ),
     Show(
         [
-            MultiClass([WEAPON.WAND, OFFHAND.FOCUS]),
-            TierStyle(TIER.RARE),
+            MultiBaseType(["Withered Wand", "Tasalian Focus"]),
+            ItemLevel(79),
+            # Rarity(RARITY.NORMAL),
+            TierStyle(TIER.EPIC),
+        ]
+    ),
+    Show(
+        [
+            MultiBaseType(
+                [
+                    "Gold Ring",
+                    "Pearl Ring",
+                    "Prismatic Ring",
+                    "Ruby Ring",
+                    "Topaz Ring",
+                    "Sapphire Ring",
+                    "Solar Amulet",
+                    "Gold Amulet",
+                    "Lunar Amulet",
+                ]
+            ),
+            ItemLevel(79),
+            Rarity(RARITY.NORMAL),
+            TierStyle(TIER.EPIC),
         ]
     ),
     # Exceptional
@@ -61,5 +91,6 @@ rules = [
     Hide([MultiClass(list(ARMOUR))]),
     Hide([MultiClass(list(WEAPON))]),
     Hide([MultiClass(list(OFFHAND))]),
+    Hide([MultiClass(list(JEWELRY))]),
     Hide([MultiClass(["Charms"])]),
 ]

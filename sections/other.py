@@ -96,7 +96,7 @@ rules = [
     # Custom Styles
     Show([MultiBaseType(list(OMEN)), RitualStyle()]),
     Show([MultiBaseType(list(ABYSS)), AbyssStyle()]),
-    Show([MultiBaseType(list(CATALYST)), BreachStyle()]),
+    Show([MultiBaseType([*list(CATALYST), "Breach Ring"]), BreachStyle()]),
     Show([MultiBaseType(list(EMOTION)), DeliriumStyle()]),
     Show([MultiBaseType(list(EXPEDITION)), ExpeditionStyle()]),
     Show([MultiBaseType([EXPEDITION.LOGBOOK]), TierStyle(TIER.LEGENDARY)]),
