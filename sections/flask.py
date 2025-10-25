@@ -4,12 +4,12 @@ from app.conditions import *
 from app.categories import *
 
 rules = [
-    # Show(
-    #     [
-    #         MultiClass([FLASK.LIFE, FLASK.MANA]),
-    #         TierStyle(TIER.RARE),
-    #     ]
-    # ),
+    Show(
+        [
+            MultiClass([FLASK.LIFE, FLASK.MANA]),
+            TierStyle(TIER.RARE),
+        ]
+    ),
     # Show(
     #     [
     #         MultiBaseType(["Ultimate Mana Flask", "Ultimate Life Flask"]),
@@ -17,17 +17,16 @@ rules = [
     #         TierStyle(TIER.RARE),
     #     ]
     # ),
+    # Show(
+    #     [
+    #         MultiClass([GEAR.CHARM]),
+    #         MultiBaseType(["Thawing Charm", "Silver Charm", "Golden Charm"]),
+    #         TierStyle(TIER.RARE),
+    #     ]
+    # ),
     Show(
         [
             MultiClass([GEAR.CHARM]),
-            MultiBaseType(["Thawing Charm", "Silver Charm", "Golden Charm"]),
-            TierStyle(TIER.RARE),
-        ]
-    ),
-    Show(
-        [
-            MultiClass([GEAR.CHARM]),
-            Rarity(RARITY.NORMAL),
             TierStyle(TIER.RARE),
         ]
     ),

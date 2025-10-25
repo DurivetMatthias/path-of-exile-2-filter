@@ -25,14 +25,14 @@ GLASSBLOWER = [
 rules = [
     Show(
         [
-            AreaLevel(45),
+            AreaLevel(20),
             Rarity(RARITY.RARE),
             VendorStyle(),
         ]
     ),
     Show(
         [
-            AreaLevel(45),
+            MultiClass(list(WEAPON)),
             Quality(),
             VendorStyle(),
         ]

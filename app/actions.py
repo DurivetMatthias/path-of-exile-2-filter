@@ -100,6 +100,21 @@ class SetBackgroundColor(Condition):
         """
 
 
+class CustomAlertSound(Condition):
+    def __init__(
+        self,
+        audio_file: str,
+        volume: VOLUME = VOLUME.MEDIUM,
+    ):
+        self.audio_file = audio_file
+        self.volume = volume
+
+    def __str__(self):
+        return f"""
+            CustomAlertSound "{self.audio_file}" {self.volume}
+        """
+
+
 class TierStyle(Condition):
     def __init__(self, tier: TIER):
         self.tier = tier

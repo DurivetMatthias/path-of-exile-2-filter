@@ -13,61 +13,78 @@ rules = [
             TierStyle(TIER.COMMON),
         ]
     ),
-    # Show caster gear
+    # Gear
     Show(
         [
-            MultiBaseType(
-                [
-                    "Vile Robe",
-                    "Ancestral Tiara",
-                    "Sekhema Sandals",
-                    "Sirenscale Gloves",
-                ]
-            ),
-            ItemLevel(79),
-            Rarity(RARITY.NORMAL),
-            TierStyle(TIER.EPIC),
+            PureArmour(),
+            TierStyle(TIER.COMMON),
         ]
     ),
     Show(
         [
-            MultiBaseType(["Withered Wand", "Tasalian Focus"]),
-            ItemLevel(79),
-            # Rarity(RARITY.NORMAL),
-            TierStyle(TIER.EPIC),
+            MultiClass([WEAPON.ONE_HAND_MACE, WEAPON.TWO_HAND_MACE, OFFHAND.SHIELD]),
+            TierStyle(TIER.RARE),
         ]
     ),
     Show(
         [
-            MultiBaseType(
-                [
-                    "Gold Ring",
-                    "Pearl Ring",
-                    "Prismatic Ring",
-                    "Ruby Ring",
-                    "Topaz Ring",
-                    "Sapphire Ring",
-                    "Solar Amulet",
-                    "Gold Amulet",
-                    "Lunar Amulet",
-                ]
-            ),
-            ItemLevel(79),
-            Rarity(RARITY.NORMAL),
-            TierStyle(TIER.EPIC),
+            MultiClass([JEWELRY.RING, JEWELRY.AMULET, JEWELRY.BELT]),
+            TierStyle(TIER.RARE),
         ]
     ),
+    # Show(
+    #     [
+    #         MultiBaseType(
+    #             [
+    #                 "Vile Robe",
+    #                 "Ancestral Tiara",
+    #                 "Sekhema Sandals",
+    #                 "Sirenscale Gloves",
+    #             ]
+    #         ),
+    #         ItemLevel(79),
+    #         Rarity(RARITY.NORMAL),
+    #         TierStyle(TIER.EPIC),
+    #     ]
+    # ),
+    # Show(
+    #     [
+    #         MultiBaseType(["Withered Wand", "Tasalian Focus"]),
+    #         ItemLevel(79),
+    #         # Rarity(RARITY.NORMAL),
+    #         TierStyle(TIER.EPIC),
+    #     ]
+    # ),
+    # Show(
+    #     [
+    #         MultiBaseType(
+    #             [
+    #                 "Gold Ring",
+    #                 "Pearl Ring",
+    #                 "Prismatic Ring",
+    #                 "Ruby Ring",
+    #                 "Topaz Ring",
+    #                 "Sapphire Ring",
+    #                 "Solar Amulet",
+    #                 "Gold Amulet",
+    #                 "Lunar Amulet",
+    #             ]
+    #         ),
+    #         ItemLevel(79),
+    #         Rarity(RARITY.NORMAL),
+    #         TierStyle(TIER.EPIC),
+    #     ]
+    # ),
     # Exceptional
     Show(
         [
-            MultiClass([WEAPON.WAND, OFFHAND.FOCUS]),
+            MultiClass([WEAPON.ONE_HAND_MACE, WEAPON.TWO_HAND_MACE]),
             Quality(21),
             TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show(
         [
-            MultiClass([ARMOUR.BODY]),
             Sockets(3),
             TierStyle(TIER.LEGENDARY),
         ]
@@ -81,6 +98,7 @@ rules = [
                     ARMOUR.GLOVES,
                     WEAPON.WAND,
                     OFFHAND.FOCUS,
+                    OFFHAND.SHIELD,
                 ]
             ),
             Sockets(2),

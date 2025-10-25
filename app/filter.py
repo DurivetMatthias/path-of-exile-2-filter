@@ -49,7 +49,7 @@ def sort_rules(rules: list[Block]):
     return [*show_rules, *hide_rules]
 
 
-def generate(*, rules: list[Block]):
+def generate(*, rules: list[Block], name: str = "main"):
     header = f"""
         # The following item filter was automatically generated.
         # Created on {datetime.datetime.now().strftime("%A %B %d %Y, %H:%M:%S")}.
@@ -59,7 +59,7 @@ def generate(*, rules: list[Block]):
         rules=sorted_rules,
         header=header,
     )
-    output_filepath = os.path.join(FILTER_OUTPUT_PATH, f"main.{FILTER_EXTENSION}")
+    output_filepath = os.path.join(FILTER_OUTPUT_PATH, f"{name}.{FILTER_EXTENSION}")
     with open(output_filepath, mode="w", encoding="utf-8") as output_file:
         output_file.write(file_content)
     print()
