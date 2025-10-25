@@ -4,81 +4,31 @@ from app.conditions import *
 from app.categories import *
 
 rules = [
-    # Show magic boots
-    Show(
-        [
-            AreaLevel(11),
-            MultiClass([ARMOUR.BOOTS]),
-            Rarity(RARITY.MAGIC),
-            TierStyle(TIER.COMMON),
-        ]
-    ),
     # Gear
     Show(
         [
-            PureArmour(),
+            AreaLevel(64),
+            PureEvasion(),
             TierStyle(TIER.COMMON),
         ]
     ),
     Show(
         [
-            MultiClass([WEAPON.ONE_HAND_MACE, WEAPON.TWO_HAND_MACE, OFFHAND.SHIELD]),
+            AreaLevel(64),
+            MultiClass([WEAPON.BOW, OFFHAND.QUIVER]),
             TierStyle(TIER.RARE),
         ]
     ),
     Show(
         [
+            AreaLevel(64),
             MultiClass([JEWELRY.RING, JEWELRY.AMULET, JEWELRY.BELT]),
             TierStyle(TIER.RARE),
         ]
     ),
-    # Show(
-    #     [
-    #         MultiBaseType(
-    #             [
-    #                 "Vile Robe",
-    #                 "Ancestral Tiara",
-    #                 "Sekhema Sandals",
-    #                 "Sirenscale Gloves",
-    #             ]
-    #         ),
-    #         ItemLevel(79),
-    #         Rarity(RARITY.NORMAL),
-    #         TierStyle(TIER.EPIC),
-    #     ]
-    # ),
-    # Show(
-    #     [
-    #         MultiBaseType(["Withered Wand", "Tasalian Focus"]),
-    #         ItemLevel(79),
-    #         # Rarity(RARITY.NORMAL),
-    #         TierStyle(TIER.EPIC),
-    #     ]
-    # ),
-    # Show(
-    #     [
-    #         MultiBaseType(
-    #             [
-    #                 "Gold Ring",
-    #                 "Pearl Ring",
-    #                 "Prismatic Ring",
-    #                 "Ruby Ring",
-    #                 "Topaz Ring",
-    #                 "Sapphire Ring",
-    #                 "Solar Amulet",
-    #                 "Gold Amulet",
-    #                 "Lunar Amulet",
-    #             ]
-    #         ),
-    #         ItemLevel(79),
-    #         Rarity(RARITY.NORMAL),
-    #         TierStyle(TIER.EPIC),
-    #     ]
-    # ),
     # Exceptional
     Show(
         [
-            MultiClass([WEAPON.ONE_HAND_MACE, WEAPON.TWO_HAND_MACE]),
             Quality(21),
             TierStyle(TIER.LEGENDARY),
         ]

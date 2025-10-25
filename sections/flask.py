@@ -6,6 +6,7 @@ from app.categories import *
 rules = [
     Show(
         [
+            AreaLevel(64),
             MultiClass([FLASK.LIFE, FLASK.MANA]),
             TierStyle(TIER.RARE),
         ]
