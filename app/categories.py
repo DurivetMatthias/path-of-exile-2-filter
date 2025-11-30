@@ -632,3 +632,14 @@ class RELIQUARY_KEY(StrEnum):
     ARBITER = "The Arbiter's Reliquary Key"
     RITUALISTIC = "Ritualistic Reliquary Key"
     TRIALMASTER = "The Trialmaster's Reliquary Key"
+
+
+class ARCHETYPE(StrEnum):
+    # mono
+    STR = "STR"
+    DEX = "DEX"
+    INT = "INT"
+    # multi
+    STR_DEX = "STR_DEX"
+    STR_INT = "STR_INT"
+    DEX_INT = "DEX_INT"

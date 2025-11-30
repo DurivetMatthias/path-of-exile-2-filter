@@ -25,4 +25,4 @@ rules = [
     *waystone.rules,
 ]
 
-filter.generate(rules=rules)
+filter.generate(rules)

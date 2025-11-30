@@ -49,7 +49,7 @@ def sort_rules(rules: list[Block]):
     return [*show_rules, *hide_rules]
 
 
-def generate(*, rules: list[Block], name: str = "main"):
+def generate(rules: list[Block], name: str = "main"):
     header = f"""
         # The following item filter was automatically generated.
         # Created on {datetime.datetime.now().strftime("%A %B %d %Y, %H:%M:%S")}.

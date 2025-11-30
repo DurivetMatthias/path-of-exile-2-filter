@@ -6,8 +6,13 @@ from app.categories import *
 rules = [
     Show(
         [
-            AreaLevel(64),
             MultiClass([FLASK.LIFE, FLASK.MANA]),
+            TierStyle(TIER.RARE),
+        ]
+    ),
+    Show(
+        [
+            MultiClass([GEAR.CHARM]),
             TierStyle(TIER.RARE),
         ]
     ),
@@ -25,11 +30,6 @@ rules = [
     #         TierStyle(TIER.RARE),
     #     ]
     # ),
-    Show(
-        [
-            MultiClass([GEAR.CHARM]),
-            TierStyle(TIER.RARE),
-        ]
-    ),
     Hide([MultiClass([FLASK.LIFE, FLASK.MANA])]),
+    Hide([MultiClass([GEAR.CHARM])]),
 ]

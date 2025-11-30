@@ -3,25 +3,14 @@ from app.actions import *
 from app.conditions import *
 from app.categories import *
 
+from archetypes.gear import *
+
 rules = [
     # Gear
+    *get_weapon_rules(ARCHETYPE.INT),
+    *get_armour_rules(ARCHETYPE.INT),
     Show(
         [
-            AreaLevel(64),
-            PureEnergyShield(),
-            TierStyle(TIER.COMMON),
-        ]
-    ),
-    Show(
-        [
-            AreaLevel(64),
-            MultiClass([WEAPON.WAND, OFFHAND.FOCUS, WEAPON.SCEPTRE]),
-            TierStyle(TIER.RARE),
-        ]
-    ),
-    Show(
-        [
-            AreaLevel(64),
             MultiClass([JEWELRY.RING, JEWELRY.AMULET, JEWELRY.BELT]),
             TierStyle(TIER.RARE),
         ]
@@ -59,6 +48,5 @@ rules = [
     Hide([MultiClass(list(ARMOUR))]),
     Hide([MultiClass(list(WEAPON))]),
     Hide([MultiClass(list(OFFHAND))]),
-    Hide([MultiClass(list(JEWELRY))]),
-    Hide([MultiClass(["Charms"])]),
+    # Hide([MultiClass(list(JEWELRY))]),
 ]
