@@ -5,8 +5,6 @@ from app.categories import *
 
 rules = []
 
-# rules.append(Show([BaseType(CURRENCY.EXALTED), CustomAlertSound("exalted_orb.wav")]))
-# TODO remove after testing
 for area_level in range(1, 100):
     rules.append(
         Show(

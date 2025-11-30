@@ -8,14 +8,14 @@ rules = [
     Show(
         [
             AreaLevel(64),
-            PureEvasion(),
+            PureEnergyShield(),
             TierStyle(TIER.COMMON),
         ]
     ),
     Show(
         [
             AreaLevel(64),
-            MultiClass([WEAPON.BOW, OFFHAND.QUIVER]),
+            MultiClass([WEAPON.WAND, OFFHAND.FOCUS, WEAPON.SCEPTRE]),
             TierStyle(TIER.RARE),
         ]
     ),

@@ -30,13 +30,13 @@ rules = [
             VendorStyle(),
         ]
     ),
-    Show(
-        [
-            MultiClass(list(WEAPON)),
-            Quality(),
-            VendorStyle(),
-        ]
-    ),
+    # Show(
+    #     [
+    #         MultiClass(list(WEAPON)),
+    #         Quality(),
+    #         VendorStyle(),
+    #     ]
+    # ),
     Show(
         [
             Quality(),
