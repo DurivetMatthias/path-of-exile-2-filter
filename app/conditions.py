@@ -612,3 +612,8 @@ class IsVaalUnique(Condition):
         return f"""
             IsVaalUnique {self.value}
         """
+
+
+class NullCondition(Condition):
+    def __str__(self):
+        return ""

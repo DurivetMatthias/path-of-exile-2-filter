@@ -3,34 +3,17 @@ from app.actions import *
 from app.conditions import *
 from app.categories import *
 
+from sections.endgame.endgame_evasion_rules import *
+from sections.endgame.endgame_jewelry_rules import *
+
 # TODO define presets and breakpoints
 # eg. pre-maps, white maps, T15 maps
 # Import whatever is needed without rewriting every time
 
 rules = [
     # Gear
-    Show(
-        [
-            ItemLevel(65, OPERATOR.LT),
-            MultiClass([WEAPON.BOW, OFFHAND.QUIVER]),
-            TierStyle(TIER.COMMON),
-        ]
-    ),
-    Show(
-        [
-            ItemLevel(65, OPERATOR.LT),
-            PureArmour(),
-            MultiClass([GEAR.BODY_ARMOUR, GEAR.HELMET, GEAR.BOOTS, GEAR.GLOVES]),
-            TierStyle(TIER.COMMON),
-        ]
-    ),
-    Show(
-        [
-            ItemLevel(65, OPERATOR.LT),
-            MultiClass([JEWELRY.AMULET, JEWELRY.RING, JEWELRY.BELT]),
-            TierStyle(TIER.COMMON),
-        ]
-    ),
+    *endgame_evasion_rules(),
+    *endgame_jewelry_rules(),
     # Hide the rest
     Hide([MultiClass(list(ARMOUR))]),
     Hide([MultiClass(list(WEAPON))]),
