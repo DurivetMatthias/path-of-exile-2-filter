@@ -85,13 +85,13 @@ class FONT_SIZE(StrEnum):
 
 
 class OPERATOR(StrEnum):
-    GT = ">"
-    LT = "<"
-    LTE = "<="
-    GTE = ">="
-    EQUAL = "="
-    EXACT = "=="
+    CONTAINS = "="
     NOT_EQUAL = "!="
+    LTE = "<="
+    LT = "<"
+    GTE = ">="
+    GT = ">"
+    EXACT = "=="
 
 
 class RARITY(StrEnum):
@@ -129,6 +129,7 @@ class WEAPON(StrEnum):
     DAGGER = "Daggers"
     SCEPTRE = "Sceptres"
     CROSSBOW = "Crossbows"
+    TALISMAN = "Talismans"
     FISHING_ROD = "Fishing Rods"
     ONE_HAND_AXE = "One Hand Axes"
     TWO_HAND_AXE = "Two Hand Axes"
@@ -153,19 +154,16 @@ class JEWELRY(StrEnum):
 
 
 class GEAR(StrEnum):
-    BELT = "Belts"
-    RING = "Rings"
     BOOTS = "Boots"
-    CHARM = "Charms"
     GLOVES = "Gloves"
     HELMET = "Helmets"
-    AMULET = "Amulets"
     BODY_ARMOUR = "Body Armours"
 
 
 class FLASK(StrEnum):
     LIFE = "Life Flasks"
     MANA = "Mana Flasks"
+    CHARM = "Charms"
 
 
 class JEWEL(StrEnum):
@@ -284,38 +282,6 @@ class GREATER_RUNE(StrEnum):
     LEADERSHIP = "Greater Rune of Leadership"
 
 
-class TALISMAN(StrEnum):
-    OX = "Ox Talisman"
-    CAT = "Cat Talisman"
-    OWL = "Owl Talisman"
-    FOX = "Fox Talisman"
-    BOAR = "Boar Talisman"
-    BEAR = "Bear Talisman"
-    WOLF = "Wolf Talisman"
-    STAG = "Stag Talisman"
-    RABBIT = "Rabbit Talisman"
-    SERPENT = "Serpent Talisman"
-    PRIMATE = "Primate Talisman"
-
-
-class SOUL_CORE(StrEnum):
-    XOPEC = "Soul Core of Xopec"
-    ZALATL = "Soul Core of Zalatl"
-    TACATI = "Soul Core of Tacati"
-    TICABA = "Soul Core of Ticaba"
-    AZCAPA = "Soul Core of Azcapa"
-    JIQUANI = "Soul Core of Jiquani"
-    OPILOTI = "Soul Core of Opiloti"
-    CHOLOTL = "Soul Core of Cholotl"
-    TZAMOTO = "Soul Core of Tzamoto"
-    ATMOHUA = "Soul Core of Atmohua"
-    ZANTIPI = "Soul Core of Zantipi"
-    PUHUARTE = "Soul Core of Puhuarte"
-    QUIPOLATL = "Soul Core of Quipolatl"
-    TOPOTANTE = "Soul Core of Topotante"
-    CITAQUALOTL = "Soul Core of Citaqualotl"
-
-
 class CURRENCY(StrEnum):
     # https://poe2db.tw/us/Stackable_Currency
     WISDOM = "Scroll of Wisdom"
@@ -369,6 +335,7 @@ class CURRENCY(StrEnum):
 
 class TABLET(StrEnum):
     NORMAL = "Precursor Tablet"
+    ABYSS = "Abyss Precursor Tablet"
     BOSS = "Overseer Precursor Tablet"
     RITUAL = "Ritual Precursor Tablet"
     BREACH = "Breach Precursor Tablet"
@@ -406,109 +373,10 @@ class ABYSS(StrEnum):
     KULEMAKS_INVITATION = "Kulemak's Invitation"
 
 
-class RELIC(StrEnum):
-    URN = "Urn Relic"
-    VASE = "Vase Relic"
-    SEAL = "Seal Relic"
-    COFFER = "Coffer Relic"
-    INCENSE = "Incense Relic"
-    AMPHORA = "Amphora Relic"
-    TAPESTRY = "Tapestry Relic"
-
-
 class SEKHEMA_KEY(StrEnum):
     GOLD = "Gold Key"
     BRONZE = "Bronze Key"
     SILVER = "Silver Key"
-
-
-class LESSER_ESSENCE(StrEnum):
-    ICE = "Lesser Essence of Ice"
-    RUIN = "Lesser Essence of Ruin"
-    HASTE = "Lesser Essence of Haste"
-    BODY = "Lesser Essence of the Body"
-    MIND = "Lesser Essence of the Mind"
-    BATTLE = "Lesser Essence of Battle"
-    FLAMES = "Lesser Essence of Flames"
-    COMMAND = "Lesser Essence of Command"
-    SORCERY = "Lesser Essence of Sorcery"
-    SEEKING = "Lesser Essence of Seeking"
-    THAWING = "Lesser Essence of Thawing"
-    ABRASION = "Lesser Essence of Abrasion"
-    ALACRITY = "Lesser Essence of Alacrity"
-    OPULENCE = "Lesser Essence of Opulence"
-    GROUNDING = "Lesser Essence of Grounding"
-    INFINITE = "Lesser Essence of the Infinite"
-    INSULATION = "Lesser Essence of Insulation"
-    ELECTRICITY = "Lesser Essence of Electricity"
-    ENHANCEMENT = "Lesser Essence of Enhancement"
-
-
-class ESSENCE(StrEnum):
-    ICE = "Essence of Ice"
-    RUIN = "Essence of Ruin"
-    HASTE = "Essence of Haste"
-    BODY = "Essence of the Body"
-    MIND = "Essence of the Mind"
-    FLAMES = "Essence of Flames"
-    BATTLE = "Essence of Battle"
-    SEEKING = "Essence of Seeking"
-    ABYSS = "Essence of the Abyss"
-    SORCERY = "Essence of Sorcery"
-    COMMAND = "Essence of Command"
-    THAWING = "Essence of Thawing"
-    OPULENCE = "Essence of Opulence"
-    ALACRITY = "Essence of Alacrity"
-    ABRASION = "Essence of Abrasion"
-    GROUNDING = "Essence of Grounding"
-    INFINITE = "Essence of the Infinite"
-    INSULATION = "Essence of Insulation"
-    ENHANCEMENT = "Essence of Enhancement"
-    ELECTRICITY = "Essence of Electricity"
-
-
-class GREATER_ESSENCE(StrEnum):
-    ICE = "Greater Essence of Ice"
-    RUIN = "Greater Essence of Ruin"
-    HASTE = "Greater Essence of Haste"
-    BODY = "Greater Essence of the Body"
-    MIND = "Greater Essence of the Mind"
-    FLAMES = "Greater Essence of Flames"
-    BATTLE = "Greater Essence of Battle"
-    SEEKING = "Greater Essence of Seeking"
-    SORCERY = "Greater Essence of Sorcery"
-    COMMAND = "Greater Essence of Command"
-    THAWING = "Greater Essence of Thawing"
-    OPULENCE = "Greater Essence of Opulence"
-    ALACRITY = "Greater Essence of Alacrity"
-    ABRASION = "Greater Essence of Abrasion"
-    GROUNDING = "Greater Essence of Grounding"
-    INFINITE = "Greater Essence of the Infinite"
-    INSULATION = "Greater Essence of Insulation"
-    ENHANCEMENT = "Greater Essence of Enhancement"
-    ELECTRICITY = "Greater Essence of Electricity"
-
-
-class PERFECT_ESSENCE(StrEnum):
-    ICE = "Perfect Essence of Ice"
-    RUIN = "Perfect Essence of Ruin"
-    HASTE = "Perfect Essence of Haste"
-    MIND = "Perfect Essence of the Mind"
-    BODY = "Perfect Essence of the Body"
-    FLAMES = "Perfect Essence of Flames"
-    BATTLE = "Perfect Essence of Battle"
-    SEEKING = "Perfect Essence of Seeking"
-    SORCERY = "Perfect Essence of Sorcery"
-    COMMAND = "Perfect Essence of Command"
-    THAWING = "Perfect Essence of Thawing"
-    OPULENCE = "Perfect Essence of Opulence"
-    ABRASION = "Perfect Essence of Abrasion"
-    ALACRITY = "Perfect Essence of Alacrity"
-    GROUNDING = "Perfect Essence of Grounding"
-    INFINITE = "Perfect Essence of the Infinite"
-    INSULATION = "Perfect Essence of Insulation"
-    ELECTRICITY = "Perfect Essence of Electricity"
-    ENHANCEMENT = "Perfect Essence of Enhancement"
 
 
 class CORRUPT_ESSENCE(StrEnum):
@@ -516,25 +384,7 @@ class CORRUPT_ESSENCE(StrEnum):
     DELIRIUM = "Essence of Delirium"
     HYSTERIA = "Essence of Hysteria"
     INSANITY = "Essence of Insanity"
-    LESSER_THAWING = "Lesser Essence of Thawing"
-    LESSER_COMMAND = "Lesser Essence of Command"
-    LESSER_OPULENCE = "Lesser Essence of Opulence"
-    LESSER_ALACRITY = "Lesser Essence of Alacrity"
-    LESSER_GROUNDING = "Lesser Essence of Grounding"
-    LESSER_INSULATION = "Lesser Essence of Insulation"
-
-
-class EMOTION(StrEnum):
-    IRE = "Diluted Liquid Ire"
-    ENVY = "Liquid Envy"
-    FEAR = "Concentrated Liquid Fear"
-    GREED = "Diluted Liquid Greed"
-    GUILT = "Diluted Liquid Guilt"
-    DESPAIR = "Liquid Despair"
-    DISGUST = "Liquid Disgust"
-    PARANOIA = "Liquid Paranoia"
-    ISOLATION = "Concentrated Liquid Isolation"
-    SUFFERING = "Concentrated Liquid Suffering"
+    ABYSS = "Essence of the Abyss"
 
 
 class CATALYST(StrEnum):

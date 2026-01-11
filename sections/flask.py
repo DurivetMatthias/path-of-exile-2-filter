@@ -6,30 +6,21 @@ from app.categories import *
 rules = [
     Show(
         [
+            # ItemLevel(65),
+            # Rarity(RARITY.NORMAL),
             MultiClass([FLASK.LIFE, FLASK.MANA]),
-            TierStyle(TIER.RARE),
+            # MultiBaseType(["Ultimate Mana Flask", "Ultimate Life Flask"]),
+            TierStyle(TIER.COMMON),
         ]
     ),
     Show(
         [
-            MultiClass([GEAR.CHARM]),
-            TierStyle(TIER.RARE),
+            # ItemLevel(65),
+            # Rarity(RARITY.NORMAL),
+            Class(FLASK.CHARM),
+            # MultiBaseType(["Thawing Charm", "Silver Charm", "Golden Charm"]),
+            TierStyle(TIER.COMMON),
         ]
     ),
-    # Show(
-    #     [
-    #         MultiBaseType(["Ultimate Mana Flask", "Ultimate Life Flask"]),
-    #         ItemLevel(81),
-    #         TierStyle(TIER.RARE),
-    #     ]
-    # ),
-    # Show(
-    #     [
-    #         MultiClass([GEAR.CHARM]),
-    #         MultiBaseType(["Thawing Charm", "Silver Charm", "Golden Charm"]),
-    #         TierStyle(TIER.RARE),
-    #     ]
-    # ),
-    Hide([MultiClass([FLASK.LIFE, FLASK.MANA])]),
-    Hide([MultiClass([GEAR.CHARM])]),
+    Hide([MultiClass([FLASK.LIFE, FLASK.MANA, FLASK.CHARM])]),
 ]

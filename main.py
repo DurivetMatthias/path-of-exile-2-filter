@@ -6,8 +6,7 @@ from sections import (
     flask,
     other,
     unique,
-    vendor,
-    special,
+    leveling,
     currency,
     waystone,
 )
@@ -19,8 +18,7 @@ rules = [
     *jewel.rules,
     *other.rules,
     *unique.rules,
-    *vendor.rules,
-    *special.rules,
+    *leveling.rules,
     *currency.rules,
     *waystone.rules,
 ]

@@ -89,6 +89,23 @@ class DeliriumStyle(Condition):
         )
 
 
+class VaalStyle(Condition):
+    def __str__(self):
+        rgb = RGB.RED
+        color = COLOR.RED
+        return formatting.format_conditions(
+            [
+                PlayEffect(color),
+                SetTextColor(RGB.WHITE),
+                SetBorderColor(rgb),
+                SetBackgroundColor(rgb),
+                SetFontSize(FONT_SIZE.LARGE),
+                MinimapIcon(SIZE.SMALL, color, SHAPE.TRIANGLE),
+                PlayAlertSound(BASIC_SOUND.PUNCH, VOLUME.MEDIUM),
+            ]
+        )
+
+
 rules = [
     # Quest items
     Show([Class("Quest Items"), TierStyle(TIER.COMMON)]),
@@ -97,44 +114,98 @@ rules = [
     Show([MultiBaseType(list(OMEN)), RitualStyle()]),
     Show([MultiBaseType(list(ABYSS)), AbyssStyle()]),
     Show([MultiBaseType([*list(CATALYST), "Breach Ring"]), BreachStyle()]),
-    Show([MultiBaseType(list(EMOTION)), DeliriumStyle()]),
+    Show([BaseType("Liquid", operator=OPERATOR.CONTAINS), DeliriumStyle()]),
     Show([MultiBaseType(list(EXPEDITION)), ExpeditionStyle()]),
     Show([MultiBaseType([EXPEDITION.LOGBOOK]), TierStyle(TIER.LEGENDARY)]),
-    # Essence
-    Show([MultiBaseType(list(LESSER_ESSENCE)), TierStyle(TIER.COMMON)]),
-    Show([MultiBaseType(list(ESSENCE)), TierStyle(TIER.COMMON)]),
-    Show([MultiBaseType(list(GREATER_ESSENCE)), TierStyle(TIER.RARE)]),
-    Show([MultiBaseType(list(PERFECT_ESSENCE)), TierStyle(TIER.RARE)]),
-    Show([MultiBaseType(list(CORRUPT_ESSENCE)), TierStyle(TIER.LEGENDARY)]),
-    # Other
+    # Rise of the Vaal
     Show(
         [
             MultiBaseType(
                 [
-                    RELIC.URN,
-                    RELIC.SEAL,
-                    RELIC.VASE,
-                    RELIC.INCENSE,
-                    RELIC.COFFER,
+                    "Core Destabiliser",
+                    "Vaal Infuser",
+                    "Architect's Orb",
+                    "Ancient Infuser",
+                    "Orb of Extraction",
+                    "Crystallised Corruption",
+                    "Vaal Cultivation Orb",
+                    "Vaal Siphoner",
                 ]
             ),
-            TierStyle(TIER.COMMON),
+            VaalStyle(),
         ]
     ),
+    # Other
     Show([MultiBaseType(list(TABLET)), TierStyle(TIER.EPIC)]),
     Show([MultiBaseType(list(TRIAL)), TierStyle(TIER.COMMON)]),
     Show([MultiBaseType(list(INVITATION)), TierStyle(TIER.EPIC)]),
     Show([MultiBaseType(list(SEKHEMA_KEY)), TierStyle(TIER.COMMON)]),
     Show([MultiBaseType(list(RELIQUARY_KEY)), TierStyle(TIER.LEGENDARY)]),
-    Show([MultiBaseType(list(TALISMAN)), TierStyle(TIER.EPIC)]),
-    Show([MultiBaseType(list(SOUL_CORE)), TierStyle(TIER.LEGENDARY)]),
-    Show([MultiBaseType(list(LESSER_RUNE)), TierStyle(TIER.COMMON)]),
-    Show([MultiBaseType(list(RUNE)), TierStyle(TIER.COMMON)]),
-    Show([MultiBaseType(list(GREATER_RUNE)), TierStyle(TIER.COMMON)]),
     Show(
         [
-            BaseType("Rune of", operator=OPERATOR.EQUAL),
+            Class("Augment"),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show(
+        [
+            BaseType("Rune of", operator=OPERATOR.CONTAINS),
             TierStyle(TIER.LEGENDARY),
         ]
+    ),
+    Show(
+        [
+            BaseType("Thesis", operator=OPERATOR.CONTAINS),
+            TierStyle(TIER.LEGENDARY),
+        ]
+    ),
+    Show(
+        [
+            BaseType("Idol", operator=OPERATOR.CONTAINS),
+            TierStyle(TIER.EPIC),
+        ]
+    ),
+    Show(
+        [
+            BaseType("Soul Core", operator=OPERATOR.CONTAINS),
+            TierStyle(TIER.EPIC),
+        ]
+    ),
+    Show(
+        [
+            BaseType("Relic", operator=OPERATOR.CONTAINS),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    # Essence
+    Show(
+        [
+            BaseType("Lesser Essence", operator=OPERATOR.CONTAINS),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show(
+        [
+            BaseType("Essence", operator=OPERATOR.CONTAINS),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show(
+        [
+            BaseType("Greater Essence", operator=OPERATOR.CONTAINS),
+            TierStyle(TIER.EPIC),
+        ]
+    ),
+    Show(
+        [
+            BaseType("Perfect Essence", operator=OPERATOR.CONTAINS),
+            TierStyle(TIER.LEGENDARY),
+        ]
+    ),
+    Show(
+        [
+            MultiBaseType(list(CORRUPT_ESSENCE)),
+            TierStyle(TIER.LEGENDARY),
+        ],
     ),
 ]

@@ -6,10 +6,10 @@ from app.categories import *
 shared_config = {
     # Tiered currency
     CURRENCY.TRANSMUTATION: TIER.RARE,
-    CURRENCY.GREATER_TRANSMUTATION: TIER.EPIC,
+    CURRENCY.GREATER_TRANSMUTATION: TIER.LEGENDARY,
     CURRENCY.PERFECT_TRANSMUTATION: TIER.LEGENDARY,
     CURRENCY.AUGMENTATION: TIER.RARE,
-    CURRENCY.GREATER_AUGMENTATION: TIER.EPIC,
+    CURRENCY.GREATER_AUGMENTATION: TIER.LEGENDARY,
     CURRENCY.PERFECT_AUGMENTATION: TIER.LEGENDARY,
     CURRENCY.REGAL: TIER.EPIC,
     CURRENCY.GREATER_REGAL: TIER.LEGENDARY,
@@ -22,9 +22,9 @@ shared_config = {
     CURRENCY.GREATER_CHAOS: TIER.LEGENDARY,
     CURRENCY.PERFECT_CHAOS: TIER.LEGENDARY,
     # Shard
-    CURRENCY.CHANCE_SHARD: TIER.RARE,
+    CURRENCY.CHANCE_SHARD: TIER.EPIC,
     CURRENCY.REGAL_SHARD: TIER.COMMON,
-    CURRENCY.ARTIFICERS_SHARD: TIER.RARE,
+    CURRENCY.ARTIFICERS_SHARD: TIER.COMMON,
     # quality
     CURRENCY.ARTIFICER: TIER.RARE,
     CURRENCY.GEMCUTTER: TIER.EPIC,
@@ -33,7 +33,7 @@ shared_config = {
     CURRENCY.BLACKSMITH: TIER.COMMON,
     CURRENCY.GLASSBLOWER: TIER.COMMON,
     # Socket
-    CURRENCY.LESSER_JEWELLER: TIER.LEGENDARY,
+    CURRENCY.LESSER_JEWELLER: TIER.COMMON,
     CURRENCY.GREATER_JEWELLER: TIER.LEGENDARY,
     CURRENCY.PERFECT_JEWELLER: TIER.LEGENDARY,
     # Other
@@ -53,5 +53,28 @@ rules.extend(
     Show([BaseType(currency), TierStyle(tier)])
     for currency, tier in shared_config.items()
 )
+rules.append(
+    Show([AreaLevel(10), MultiBaseType([CURRENCY.WISDOM]), TierStyle(TIER.COMMON)])
+)
 
-rules.append(Hide([MultiBaseType(["Gold"])]))
+rules.append(
+    Hide(
+        [
+            MultiBaseType(
+                [
+                    "Gold",
+                    CURRENCY.WISDOM,
+                    # CURRENCY.REGAL_SHARD,
+                    # CURRENCY.LESSER_JEWELLER,
+                    # CURRENCY.ARCANIST,
+                    # CURRENCY.ARTIFICER,
+                    # CURRENCY.BLACKSMITH,
+                    # CURRENCY.ARMOURER,
+                    # CURRENCY.TRANSMUTATION,
+                    # CURRENCY.AUGMENTATION,
+                    # CURRENCY.REGAL,
+                ]
+            )
+        ]
+    )
+)

@@ -13,35 +13,28 @@ rules = [
                     GEM.SPIRIT,
                 ]
             ),
-            TierStyle(TIER.EPIC),
+            TierStyle(TIER.COMMON),
         ]
     ),
-    # 18+ uncut gems
+    # 19+ uncut gems
     Show(
         [
             MultiClass([GEM.SKILL, GEM.SPIRIT]),
-            BaseType("Level 18", operator=OPERATOR.EQUAL),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Show(
-        [
-            MultiClass([GEM.SKILL, GEM.SPIRIT]),
-            BaseType("Level 19", operator=OPERATOR.EQUAL),
-            TierStyle(TIER.EPIC),
+            BaseType("Level 19", operator=OPERATOR.CONTAINS),
+            TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show(
         [
             MultiClass([GEM.SKILL, GEM.SPIRIT]),
-            BaseType("Level 20", operator=OPERATOR.EQUAL),
-            TierStyle(TIER.EPIC),
+            BaseType("Level 20", operator=OPERATOR.CONTAINS),
+            TierStyle(TIER.LEGENDARY),
         ]
     ),
     # Lineage Support
     Show(
         [
-            MultiClass(["Support Gems"]),
+            Class("Support Gems"),
             TierStyle(TIER.LEGENDARY),
         ]
     ),

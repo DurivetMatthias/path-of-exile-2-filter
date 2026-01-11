@@ -28,4 +28,10 @@ rules = [
             TierStyle(TIER.LEGENDARY),
         ]
     ),
+    Hide(
+        [
+            Rarity(RARITY.RARE, OPERATOR.LTE),
+            Class("Jewels"),
+        ]
+    ),
 ]

@@ -3,50 +3,37 @@ from app.actions import *
 from app.conditions import *
 from app.categories import *
 
-from archetypes.gear import *
+# TODO define presets and breakpoints
+# eg. pre-maps, white maps, T15 maps
+# Import whatever is needed without rewriting every time
 
 rules = [
     # Gear
-    *get_weapon_rules(ARCHETYPE.INT),
-    *get_armour_rules(ARCHETYPE.INT),
     Show(
         [
-            MultiClass([JEWELRY.RING, JEWELRY.AMULET, JEWELRY.BELT]),
-            TierStyle(TIER.RARE),
-        ]
-    ),
-    # Exceptional
-    Show(
-        [
-            Quality(21),
-            TierStyle(TIER.LEGENDARY),
+            ItemLevel(65, OPERATOR.LT),
+            MultiClass([WEAPON.BOW, OFFHAND.QUIVER]),
+            TierStyle(TIER.COMMON),
         ]
     ),
     Show(
         [
-            Sockets(3),
-            TierStyle(TIER.LEGENDARY),
+            ItemLevel(65, OPERATOR.LT),
+            PureArmour(),
+            MultiClass([GEAR.BODY_ARMOUR, GEAR.HELMET, GEAR.BOOTS, GEAR.GLOVES]),
+            TierStyle(TIER.COMMON),
         ]
     ),
     Show(
         [
-            MultiClass(
-                [
-                    ARMOUR.HELMET,
-                    ARMOUR.BOOTS,
-                    ARMOUR.GLOVES,
-                    WEAPON.WAND,
-                    OFFHAND.FOCUS,
-                    OFFHAND.SHIELD,
-                ]
-            ),
-            Sockets(2),
-            TierStyle(TIER.LEGENDARY),
+            ItemLevel(65, OPERATOR.LT),
+            MultiClass([JEWELRY.AMULET, JEWELRY.RING, JEWELRY.BELT]),
+            TierStyle(TIER.COMMON),
         ]
     ),
     # Hide the rest
     Hide([MultiClass(list(ARMOUR))]),
     Hide([MultiClass(list(WEAPON))]),
     Hide([MultiClass(list(OFFHAND))]),
-    # Hide([MultiClass(list(JEWELRY))]),
+    Hide([MultiClass(list(JEWELRY))]),
 ]

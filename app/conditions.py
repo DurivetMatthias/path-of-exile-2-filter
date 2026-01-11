@@ -477,29 +477,53 @@ class Width(Condition):
 
 
 class PureArmour(Condition):
+    def __init__(
+        self,
+        value: int = 1,
+        operator: OPERATOR = OPERATOR.GTE,
+    ):
+        self.value = value
+        self.operator = operator
+
     def __str__(self):
-        return """
-            BaseArmour >= 1
+        return f"""
+            BaseArmour {self.operator} {self.value}
             BaseEvasion == 0
             BaseEnergyShield == 0
         """
 
 
 class PureEvasion(Condition):
+    def __init__(
+        self,
+        value: int = 1,
+        operator: OPERATOR = OPERATOR.GTE,
+    ):
+        self.value = value
+        self.operator = operator
+
     def __str__(self):
-        return """
+        return f"""
             BaseArmour == 0
-            BaseEvasion >= 1
+            BaseEvasion {self.operator} {self.value}
             BaseEnergyShield == 0
         """
 
 
 class PureEnergyShield(Condition):
+    def __init__(
+        self,
+        value: int = 1,
+        operator: OPERATOR = OPERATOR.GTE,
+    ):
+        self.value = value
+        self.operator = operator
+
     def __str__(self):
-        return """
+        return f"""
             BaseArmour == 0
             BaseEvasion == 0
-            BaseEnergyShield >= 1
+            BaseEnergyShield {self.operator} {self.value}
         """
 
 
@@ -527,4 +551,64 @@ class HybridEvasionEnergyShield(Condition):
             BaseArmour == 0
             BaseEvasion >= 1
             BaseEnergyShield >= 1
+        """
+
+
+class ArmourAndHybrid(Condition):
+    def __str__(self):
+        return """
+            BaseArmour >= 1
+        """
+
+
+class EnergyShieldAndHybrid(Condition):
+    def __str__(self):
+        return """
+            BaseEnergyShield >= 1
+        """
+
+
+class EvasionAndHybrid(Condition):
+    def __str__(self):
+        return """
+            BaseEvasion >= 1
+        """
+
+
+class HasVaalUniqueMod(Condition):
+    def __init__(
+        self,
+        value: bool = True,
+    ):
+        self.value = value
+
+    def __str__(self):
+        return f"""
+            HasVaalUniqueMod {self.value}
+        """
+
+
+class TwiceCorrupted(Condition):
+    def __init__(
+        self,
+        value: bool = True,
+    ):
+        self.value = value
+
+    def __str__(self):
+        return f"""
+            TwiceCorrupted {self.value}
+        """
+
+
+class IsVaalUnique(Condition):
+    def __init__(
+        self,
+        value: bool = True,
+    ):
+        self.value = value
+
+    def __str__(self):
+        return f"""
+            IsVaalUnique {self.value}
         """
