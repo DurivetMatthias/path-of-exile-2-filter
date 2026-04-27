@@ -62,6 +62,7 @@ class VOLUME(StrEnum):
     QUIET = "25"
     MEDIUM = "100"
     LOUD = "200"
+    MAX = "300"
 
 
 class RGB(StrEnum):

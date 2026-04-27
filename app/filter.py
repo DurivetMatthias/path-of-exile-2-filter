@@ -62,10 +62,6 @@ def generate(rules: list[Block], name: str = "main"):
     output_filepath = os.path.join(FILTER_OUTPUT_PATH, f"{name}.{FILTER_EXTENSION}")
     with open(output_filepath, mode="w", encoding="utf-8") as output_file:
         output_file.write(file_content)
-    print()
-    print()
-    print()
+    print("=" * len(output_filepath))
     print(output_filepath)
-    print()
-    print()
-    print()
+    print("=" * len(output_filepath))

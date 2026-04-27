@@ -1,24 +1,22 @@
 from app import filter
 from sections import (
     gem,
-    gear,
     jewel,
     flask,
     other,
     unique,
-    leveling,
     currency,
     waystone,
 )
+from sections.builds import shield_wall
 
 rules = [
     *gem.rules,
-    *gear.rules,
+    *shield_wall.rules,
     *flask.rules,
     *jewel.rules,
     *other.rules,
     *unique.rules,
-    *leveling.rules,
     *currency.rules,
     *waystone.rules,
 ]
