@@ -6,7 +6,7 @@ from app.categories import *
 
 
 rules = [
-    # Vendor
+    # Gear
     Show(
         [
             AreaLevel(1, OPERATOR.LTE),
@@ -34,25 +34,24 @@ rules = [
             VendorStyle(),
         ]
     ),
-    # Gear
     Show(
         [
             ItemLevel(10, OPERATOR.LTE),
-            ArmourAndHybrid(),
+            EnergyShieldAndHybrid(),
             MultiClass(list(GEAR)),
             TierStyle(TIER.COMMON),
         ]
     ),
     Show(
         [
-            PureArmour(),
+            PureEnergyShield(),
             MultiClass(list(GEAR)),
             TierStyle(TIER.COMMON),
         ]
     ),
     Show(
         [
-            ItemLevel(16, OPERATOR.LT),
+            ItemLevel(10, OPERATOR.LTE),
             MultiClass([GEAR.BOOTS, GEAR.GLOVES]),
             Rarity(RARITY.MAGIC, OPERATOR.GTE),
             TierStyle(TIER.COMMON),
@@ -61,21 +60,14 @@ rules = [
     # Weapons
     Show(
         [
-            ItemLevel(22, OPERATOR.LT),
-            MultiClass([WEAPON.TALISMAN]),
-            TierStyle(TIER.COMMON),
-        ]
-    ),
-    Show(
-        [
-            MultiClass([WEAPON.ONE_HAND_MACE]),
-            TierStyle(TIER.COMMON),
-        ]
-    ),
-    Show(
-        [
-            PureArmour(),
-            MultiClass([OFFHAND.SHIELD]),
+            MultiClass(
+                [
+                    WEAPON.WAND,
+                    WEAPON.WAND,
+                    OFFHAND.FOCUS,
+                    WEAPON.SCEPTRE,
+                ]
+            ),
             TierStyle(TIER.COMMON),
         ]
     ),

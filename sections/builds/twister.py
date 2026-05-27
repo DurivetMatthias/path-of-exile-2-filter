@@ -6,53 +6,54 @@ from app.categories import *
 
 
 rules = [
-    # Vendor
+    # Gear
     Show(
         [
-            AreaLevel(1, OPERATOR.LTE),
+            AreaLevel(3, OPERATOR.LTE),
             VendorStyle(),
         ]
     ),
     Show(
         [
-            AreaLevel(10, OPERATOR.LTE),
+            AreaLevel(14, OPERATOR.LT),
             MultiClass([OFFHAND.QUIVER]),
             VendorStyle(),
         ]
     ),
     Show(
         [
-            AreaLevel(10, OPERATOR.LTE),
+            AreaLevel(10, OPERATOR.LT),
             BaseType("Gold"),
+            StackSize(10),
             VendorStyle(),
         ]
     ),
     Show(
         [
-            AreaLevel(10, OPERATOR.LTE),
+            AreaLevel(30, OPERATOR.LT),
             Rarity(RARITY.RARE),
             VendorStyle(),
         ]
     ),
-    # Gear
     Show(
         [
-            ItemLevel(10, OPERATOR.LTE),
-            ArmourAndHybrid(),
+            ItemLevel(10, OPERATOR.LT),
+            EvasionAndHybrid(),
             MultiClass(list(GEAR)),
             TierStyle(TIER.COMMON),
         ]
     ),
     Show(
         [
-            PureArmour(),
+            # ItemLevel(20, OPERATOR.LT),
+            PureEvasion(),
             MultiClass(list(GEAR)),
             TierStyle(TIER.COMMON),
         ]
     ),
     Show(
         [
-            ItemLevel(16, OPERATOR.LT),
+            # ItemLevel(20, OPERATOR.LT),
             MultiClass([GEAR.BOOTS, GEAR.GLOVES]),
             Rarity(RARITY.MAGIC, OPERATOR.GTE),
             TierStyle(TIER.COMMON),
@@ -61,27 +62,29 @@ rules = [
     # Weapons
     Show(
         [
-            ItemLevel(22, OPERATOR.LT),
-            MultiClass([WEAPON.TALISMAN]),
+            # ItemLevel(20, OPERATOR.LT),
+            MultiClass([WEAPON.SPEAR]),
             TierStyle(TIER.COMMON),
         ]
     ),
     Show(
         [
-            MultiClass([WEAPON.ONE_HAND_MACE]),
+            ItemLevel(20, OPERATOR.LT),
+            MultiClass([OFFHAND.BUCKLER]),
             TierStyle(TIER.COMMON),
         ]
     ),
     Show(
         [
-            PureArmour(),
-            MultiClass([OFFHAND.SHIELD]),
+            # ItemLevel(20, OPERATOR.LT),
+            MultiClass([WEAPON.SCEPTRE]),
             TierStyle(TIER.COMMON),
         ]
     ),
     # Jewelry
     Show(
         [
+            # ItemLevel(20, OPERATOR.LT),
             MultiClass(
                 [
                     JEWELRY.BELT,

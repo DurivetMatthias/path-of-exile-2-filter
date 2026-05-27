@@ -55,7 +55,7 @@ rules.extend(
     for currency, tier in shared_config.items()
 )
 rules.append(
-    Show([AreaLevel(10), MultiBaseType([CURRENCY.WISDOM]), TierStyle(TIER.COMMON)])
+    Show([AreaLevel(65), MultiBaseType([CURRENCY.WISDOM]), TierStyle(TIER.COMMON)])
 )
 rules.append(
     Hide(
