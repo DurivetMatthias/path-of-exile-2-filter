@@ -1,17 +1,17 @@
-from app.blocks import *
-from app.styles import *
 from app.actions import *
-from app.conditions import *
+from app.blocks import *
 from app.categories import *
+from app.conditions import *
+from app.styles import *
 
 rules = [
     Show(
         [
             MultiBaseType(
                 [
-                    # "Ruby",
+                    "Ruby",
                     # "Emerald",
-                    "Sapphire",
+                    # "Sapphire",
                 ]
             ),
             TierStyle(TIER.RARE),
@@ -29,10 +29,5 @@ rules = [
             TierStyle(TIER.LEGENDARY),
         ]
     ),
-    Hide(
-        [
-            Rarity(RARITY.RARE, OPERATOR.LTE),
-            Class("Jewels"),
-        ]
-    ),
+    Hide([Rarity(RARITY.RARE, OPERATOR.LTE), Class("Jewels")]),
 ]

@@ -1,4 +1,0 @@
-- make terminal split horizontal
-- use build file for gems and supports
-- combine build and filter
-- split filter into campaign and maps (split everything, not just gear)

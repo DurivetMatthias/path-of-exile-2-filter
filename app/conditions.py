@@ -665,6 +665,44 @@ class WeaponClasses(Condition):
         return str(self.condition)
 
 
+class OneHandedWeaponClasses(Condition):
+    def __init__(self):
+        self.condition = MultiClass(
+            [
+                "Wands",
+                "Spears",
+                "Sceptres",
+                "Fishing Rods",
+                "One Hand Axes",
+                "One Hand Maces",
+                "One Hand Swords",
+            ]
+        )
+
+    def __str__(self):
+        return str(self.condition)
+
+
+class TwoHandedWeaponClasses(Condition):
+    def __init__(self):
+        self.condition = MultiClass(
+            [
+                "Bows",
+                "Staves",
+                "Crossbows",
+                "Talismans",
+                "Fishing Rods",
+                "Quarterstaves",
+                "Two Hand Axes",
+                "Two Hand Maces",
+                "Two Hand Swords",
+            ]
+        )
+
+    def __str__(self):
+        return str(self.condition)
+
+
 class OffhandClasses(Condition):
     def __init__(self):
         self.condition = MultiClass(

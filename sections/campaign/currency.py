@@ -1,10 +1,11 @@
-from app.blocks import *
-from app.styles import *
 from app.actions import *
-from app.conditions import *
+from app.blocks import *
 from app.categories import *
+from app.conditions import *
+from app.styles import *
 
 shared_config = {
+    "Regal Shard": TIER.COMMON,
     "Orb of Transmutation": TIER.RARE,
     "Greater Orb of Transmutation": TIER.EPIC,
     "Perfect Orb of Transmutation": TIER.LEGENDARY,
@@ -29,15 +30,15 @@ shared_config = {
     "Gemcutter's Prism": TIER.EPIC,
     # "Arcanist's Etcher": TIER.COMMON,
     "Armourer's Scrap": TIER.COMMON,
-    # "Blacksmith's Whetstone": TIER.COMMON,
+    "Blacksmith's Whetstone": TIER.COMMON,
     "Glassblower's Bauble": TIER.COMMON,
     # Socket
     "Lesser Jeweller's Orb": TIER.EPIC,
     "Greater Jeweller's Orb": TIER.LEGENDARY,
     "Perfect Jeweller's Orb": TIER.LEGENDARY,
     # Tink
-    "Orb of Chance": TIER.LEGENDARY,
     "Divine Orb": TIER.LEGENDARY,
+    "Orb of Chance": TIER.LEGENDARY,
     "Orb of Annulment": TIER.LEGENDARY,
     "Fracturing Orb": TIER.LEGENDARY,
     "Hinekora's Lock": TIER.LEGENDARY,
@@ -49,12 +50,29 @@ rules.extend(
     Show([BaseType(currency), TierStyle(tier)])
     for currency, tier in shared_config.items()
 )
-rules.append(Show([BaseType("Gold"), StackSize(100), TierStyle(TIER.COMMON)]))
 rules.append(
     Show(
         [
-            AreaLevel(65, OPERATOR.LT),
-            MultiBaseType(["Scroll of Wisdom"]),
+            AreaLevel(15, OPERATOR.LTE),
+            BaseType("Scroll of Wisdom"),
+            TierStyle(TIER.COMMON),
+        ]
+    )
+)
+rules.append(
+    Show(
+        [
+            AreaLevel(15, OPERATOR.LTE),
+            BaseType("Gold"),
+            TierStyle(TIER.COMMON),
+        ]
+    )
+)
+rules.append(
+    Show(
+        [
+            BaseType("Gold"),
+            StackSize(100),
             TierStyle(TIER.COMMON),
         ]
     )
@@ -65,16 +83,11 @@ rules.append(
             MultiBaseType(
                 [
                     "Gold",
-                    # "Regal Shard",
-                    # "Scroll of Wisdom",
-                    # "Lesser Jeweller's Orb",
-                    # "Greater Jeweller's Orb",
-                    # "Blacksmith's Whetstone",
-                    # "Arcanist's Etcher",
-                    # "Artificer's Orb",
-                    # "Gemcutter's Prism",
-                    # "Armourer's Scrap",
-                    # "Glassblower's Bauble",
+                    "Regal Shard",
+                    "Scroll of Wisdom",
+                    "Armourer's Scrap",
+                    "Arcanist's Etcher",
+                    "Blacksmith's Whetstone",
                 ]
             )
         ]

@@ -1,8 +1,8 @@
-from app.blocks import *
-from app.styles import *
 from app.actions import *
-from app.conditions import *
+from app.blocks import *
 from app.categories import *
+from app.conditions import *
+from app.styles import *
 
 rules = [
     Show([TierStyle(TIER.EPIC), MapTier(1)]),

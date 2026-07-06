@@ -1,13 +1,19 @@
-from app.blocks import *
-from app.styles import *
 from app.actions import *
-from app.conditions import *
+from app.blocks import *
 from app.categories import *
+from app.conditions import *
+from app.styles import *
 
 rules = [
     Show(
         [
-            MultiClass(["Uncut Skill Gems", "Uncut Spirit Gems", "Uncut Support Gems"]),
+            MultiClass(
+                [
+                    "Uncut Skill Gems",
+                    "Uncut Spirit Gems",
+                    "Uncut Support Gems",
+                ]
+            ),
             TierStyle(TIER.COMMON),
         ]
     ),
@@ -40,15 +46,5 @@ rules = [
             TierStyle(TIER.LEGENDARY),
         ]
     ),
-    Hide(
-        [
-            MultiClass(
-                [
-                    "Uncut Skill Gems",
-                    "Uncut Spirit Gems",
-                    "Uncut Support Gems",
-                ]
-            )
-        ]
-    ),
+    Hide([MultiClass(["Uncut Skill Gems", "Uncut Spirit Gems", "Uncut Support Gems"])]),
 ]

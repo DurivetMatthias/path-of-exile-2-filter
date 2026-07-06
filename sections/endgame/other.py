@@ -1,9 +1,8 @@
-from app.blocks import *
-from app.styles import *
 from app.actions import *
-from app.conditions import *
+from app.blocks import *
 from app.categories import *
-
+from app.conditions import *
+from app.styles import *
 
 rules = [
     # Quest items
@@ -15,7 +14,6 @@ rules = [
         [
             MultiBaseType(
                 [
-                    "Gnawed",
                     "Preserved Collarbone",
                     "Preserved Jawbone",
                     "Preserved Rib",
@@ -32,14 +30,7 @@ rules = [
     ),
     Show(
         [
-            MultiBaseType(
-                [
-                    "Catalyst",
-                    "Breach Ring",
-                    "Wombgift",
-                ],
-                OPERATOR.CONTAINS,
-            ),
+            MultiBaseType(["Catalyst", "Breach Ring", "Wombgift"], OPERATOR.CONTAINS),
             BreachStyle(),
         ]
     ),
@@ -70,27 +61,37 @@ rules = [
     ),
     Show(
         [
+            ItemLevel(75),
             MultiBaseType(["Djinn Barya", "Inscribed Ultimatum"], OPERATOR.CONTAINS),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show(
+        [
+            MultiBaseType(["Gold Key", "Silver Key", "Bronze Key"]),
             TierStyle(TIER.COMMON),
         ]
     ),
     Show([MultiBaseType(["Splinter"], OPERATOR.CONTAINS), TierStyle(TIER.EPIC)]),
     Show(
         [
-            MultiBaseType(
-                [
-                    "Gold Key",
-                    "Silver Key",
-                    "Bronze Key",
-                ]
-            ),
-            TierStyle(TIER.COMMON),
+            MultiBaseType(["Reliquary Key"], OPERATOR.CONTAINS),
+            TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show(
         [
-            MultiBaseType(["Reliquary Key"], OPERATOR.CONTAINS),
-            TierStyle(TIER.LEGENDARY),
+            MultiBaseType(
+                [
+                    "Greater Iron Rune",
+                    "Greater Desert Rune",
+                    "Greater Storm Rune",
+                    "Greater Glacial Rune",
+                    "Greater Body Rune",
+                ],
+                OPERATOR.CONTAINS,
+            ),
+            TierStyle(TIER.RARE),
         ]
     ),
     Show(
@@ -102,18 +103,6 @@ rules = [
     # Essence
     Show(
         [
-            BaseType("Lesser Essence", operator=OPERATOR.CONTAINS),
-            TierStyle(TIER.COMMON),
-        ]
-    ),
-    Show(
-        [
-            BaseType("Essence", operator=OPERATOR.CONTAINS),
-            TierStyle(TIER.COMMON),
-        ]
-    ),
-    Show(
-        [
             BaseType("Greater Essence", operator=OPERATOR.CONTAINS),
             TierStyle(TIER.EPIC),
         ]
@@ -121,22 +110,24 @@ rules = [
     Show(
         [
             BaseType("Perfect Essence", operator=OPERATOR.CONTAINS),
-            TierStyle(TIER.LEGENDARY),
+            TierStyle(TIER.EPIC),
         ]
     ),
-    # Show(
-    #     [
-    #         MultiBaseType(
-    #             [
-    #                 "Breach Splinter",
-    #                 "An Audience with the King",
-    #                 "Head of the King",
-    #                 "Breachlord Sac",
-    #             ]
-    #         ),
-    #         TierStyle(TIER.LEGENDARY),
-    #     ],
-    # ),
+    Show(
+        [
+            MultiBaseType(
+                [
+                    "Essence of Horror",
+                    "Essence of Delirium",
+                    "Essence of Insanity",
+                    "Essence of Hysteria",
+                    "Essence of the Abyss",
+                    "Essence of the Breach",
+                ]
+            ),
+            TierStyle(TIER.LEGENDARY),
+        ],
+    ),
     Show(
         [
             Class("Map Fragments"),
@@ -146,16 +137,6 @@ rules = [
     Show(
         [
             Class("Pinnacle Keys"),
-            TierStyle(TIER.LEGENDARY),
-        ],
-    ),
-    Show(
-        [
-            MultiBaseType(
-                [
-                    "Essence of Horror",
-                ]
-            ),
             TierStyle(TIER.LEGENDARY),
         ],
     ),
@@ -180,6 +161,27 @@ rules = [
             TierStyle(TIER.LEGENDARY),
         ]
     ),
+    Show(
+        [
+            OffhandClasses(),
+            Sockets(2),
+            TierStyle(TIER.LEGENDARY),
+        ]
+    ),
+    Show(
+        [
+            TwoHandedWeaponClasses(),
+            Sockets(3),
+            TierStyle(TIER.LEGENDARY),
+        ]
+    ),
+    Show(
+        [
+            OneHandedWeaponClasses(),
+            Sockets(2),
+            TierStyle(TIER.LEGENDARY),
+        ]
+    ),
     # ===========================
     # Runes of Aldur / Expedition
     # ===========================
@@ -188,8 +190,6 @@ rules = [
             Class("Stackable Currency"),
             MultiBaseType(
                 [
-                    "Expedition Logbook",
-                    "Verisium",
                     "Alloy",
                     "Flux",
                     "Ore",
@@ -203,7 +203,7 @@ rules = [
     ),
     Show(
         [
-            MultiBaseType(["Expedition Logbook", "Shattered Triskelion"]),
+            MultiBaseType(["Verisium", "Expedition Logbook", "Shattered Triskelion"]),
             ExpeditionStyle(),
         ]
     ),
