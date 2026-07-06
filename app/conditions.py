@@ -617,3 +617,64 @@ class IsVaalUnique(Condition):
 class NullCondition(Condition):
     def __str__(self):
         return ""
+
+
+class GearClasses(Condition):
+    def __init__(self):
+        self.condition = MultiClass(["Body Armours", "Helmets", "Gloves", "Boots"])
+
+    def __str__(self):
+        return str(self.condition)
+
+
+class JewelryClasses(Condition):
+    def __init__(self):
+        self.condition = MultiClass(["Rings", "Amulets", "Belts"])
+
+    def __str__(self):
+        return str(self.condition)
+
+
+class WeaponClasses(Condition):
+    def __init__(self):
+        self.condition = MultiClass(
+            [
+                "Bows",
+                "Claws",
+                "Traps",
+                "Wands",
+                "Flails",
+                "Staves",
+                "Spears",
+                "Daggers",
+                "Sceptres",
+                "Crossbows",
+                "Talismans",
+                "Fishing Rods",
+                "One Hand Axes",
+                "Two Hand Axes",
+                "Quarterstaves",
+                "One Hand Maces",
+                "Two Hand Maces",
+                "One Hand Swords",
+                "Two Hand Swords",
+            ]
+        )
+
+    def __str__(self):
+        return str(self.condition)
+
+
+class OffhandClasses(Condition):
+    def __init__(self):
+        self.condition = MultiClass(
+            [
+                "Foci",
+                "Quivers",
+                "Shields",
+                "Bucklers",
+            ]
+        )
+
+    def __str__(self):
+        return str(self.condition)

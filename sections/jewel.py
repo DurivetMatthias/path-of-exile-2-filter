@@ -9,9 +9,9 @@ rules = [
         [
             MultiBaseType(
                 [
-                    JEWEL.RUBY,
-                    JEWEL.EMERALD,
-                    JEWEL.SAPPHIRE,
+                    # "Ruby",
+                    # "Emerald",
+                    "Sapphire",
                 ]
             ),
             TierStyle(TIER.RARE),
@@ -21,9 +21,9 @@ rules = [
         [
             MultiBaseType(
                 [
-                    JEWEL.TIME_LOST_RUBY,
-                    JEWEL.TIME_LOST_EMERALD,
-                    JEWEL.TIME_LOST_SAPPHIRE,
+                    "Time-Lost Ruby",
+                    "Time-Lost Emerald",
+                    "Time-Lost Sapphire",
                 ]
             ),
             TierStyle(TIER.LEGENDARY),

@@ -10,69 +10,92 @@ rules = [
     Show([Class("Quest Items"), TierStyle(TIER.COMMON)]),
     Show([Class("Instance Local Items"), TierStyle(TIER.COMMON)]),
     # Custom Styles
-    Show([MultiBaseType(list(OMEN)), RitualStyle()]),
-    Show([MultiBaseType(list(ABYSS)), AbyssStyle()]),
-    Show([MultiBaseType([*list(CATALYST), "Breach Ring"]), BreachStyle()]),
-    Show([BaseType("Liquid", operator=OPERATOR.CONTAINS), DeliriumStyle()]),
-    Show([MultiBaseType(list(EXPEDITION)), ExpeditionStyle()]),
-    Show([MultiBaseType([EXPEDITION.LOGBOOK]), TierStyle(TIER.LEGENDARY)]),
-    # Rise of the Vaal
+    Show([Class("Omen"), RitualStyle()]),
     Show(
         [
             MultiBaseType(
                 [
+                    "Gnawed",
+                    "Preserved Collarbone",
+                    "Preserved Jawbone",
+                    "Preserved Rib",
+                    "Preserved Cranium",
+                    "Ancient Collarbone",
+                    "Ancient Jawbone",
+                    "Ancient Rib",
+                    "Altered Collarbone",
+                ],
+                OPERATOR.CONTAINS,
+            ),
+            AbyssStyle(),
+        ]
+    ),
+    Show(
+        [
+            MultiBaseType(
+                [
+                    "Catalyst",
+                    "Breach Ring",
+                    "Wombgift",
+                ],
+                OPERATOR.CONTAINS,
+            ),
+            BreachStyle(),
+        ]
+    ),
+    Show([BaseType("Liquid", operator=OPERATOR.CONTAINS), DeliriumStyle()]),
+    Show(
+        [
+            MultiBaseType(
+                [
+                    "Infuser",
+                    "Vaal Siphoner",
+                    "Vaal Cultivation Orb",
                     "Core Destabiliser",
-                    "Vaal Infuser",
                     "Architect's Orb",
-                    "Ancient Infuser",
                     "Orb of Extraction",
                     "Crystallised Corruption",
-                    "Vaal Cultivation Orb",
-                    "Vaal Siphoner",
-                ]
+                ],
+                OPERATOR.CONTAINS,
             ),
             VaalStyle(),
         ]
     ),
     # Other
-    Show([MultiBaseType(list(TABLET)), TierStyle(TIER.EPIC)]),
-    Show([MultiBaseType(list(TRIAL)), TierStyle(TIER.COMMON)]),
-    Show([MultiBaseType(list(INVITATION)), TierStyle(TIER.EPIC)]),
-    Show([MultiBaseType(list(SEKHEMA_KEY)), TierStyle(TIER.COMMON)]),
-    Show([MultiBaseType(list(RELIQUARY_KEY)), TierStyle(TIER.LEGENDARY)]),
     Show(
         [
-            Class("Augment"),
+            MultiBaseType(["Tablet"], OPERATOR.CONTAINS),
+            TierStyle(TIER.EPIC),
+        ]
+    ),
+    Show(
+        [
+            MultiBaseType(["Djinn Barya", "Inscribed Ultimatum"], OPERATOR.CONTAINS),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show([MultiBaseType(["Splinter"], OPERATOR.CONTAINS), TierStyle(TIER.EPIC)]),
+    Show(
+        [
+            MultiBaseType(
+                [
+                    "Gold Key",
+                    "Silver Key",
+                    "Bronze Key",
+                ]
+            ),
             TierStyle(TIER.COMMON),
         ]
     ),
     Show(
         [
-            BaseType("Rune of", operator=OPERATOR.CONTAINS),
+            MultiBaseType(["Reliquary Key"], OPERATOR.CONTAINS),
             TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show(
         [
-            BaseType("Thesis", operator=OPERATOR.CONTAINS),
-            TierStyle(TIER.LEGENDARY),
-        ]
-    ),
-    Show(
-        [
-            BaseType("Idol", operator=OPERATOR.CONTAINS),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Show(
-        [
-            BaseType("Soul Core", operator=OPERATOR.CONTAINS),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Show(
-        [
-            BaseType("Relic", operator=OPERATOR.CONTAINS),
+            Class("Augment"),
             TierStyle(TIER.COMMON),
         ]
     ),
@@ -101,10 +124,87 @@ rules = [
             TierStyle(TIER.LEGENDARY),
         ]
     ),
+    # Show(
+    #     [
+    #         MultiBaseType(
+    #             [
+    #                 "Breach Splinter",
+    #                 "An Audience with the King",
+    #                 "Head of the King",
+    #                 "Breachlord Sac",
+    #             ]
+    #         ),
+    #         TierStyle(TIER.LEGENDARY),
+    #     ],
+    # ),
     Show(
         [
-            MultiBaseType(list(CORRUPT_ESSENCE)),
+            Class("Map Fragments"),
             TierStyle(TIER.LEGENDARY),
         ],
+    ),
+    Show(
+        [
+            Class("Pinnacle Keys"),
+            TierStyle(TIER.LEGENDARY),
+        ],
+    ),
+    Show(
+        [
+            MultiBaseType(
+                [
+                    "Essence of Horror",
+                ]
+            ),
+            TierStyle(TIER.LEGENDARY),
+        ],
+    ),
+    # Exceptional items
+    Show(
+        [
+            Quality(21),
+            TierStyle(TIER.LEGENDARY),
+        ]
+    ),
+    Show(
+        [
+            MultiClass(["Gloves", "Boots", "Helmets"]),
+            Sockets(2),
+            TierStyle(TIER.LEGENDARY),
+        ]
+    ),
+    Show(
+        [
+            MultiClass(["Body Armours"]),
+            Sockets(3),
+            TierStyle(TIER.LEGENDARY),
+        ]
+    ),
+    # ===========================
+    # Runes of Aldur / Expedition
+    # ===========================
+    Show(
+        [
+            Class("Stackable Currency"),
+            MultiBaseType(
+                [
+                    "Expedition Logbook",
+                    "Verisium",
+                    "Alloy",
+                    "Flux",
+                    "Ore",
+                    "Crest",
+                    "Saga",
+                ],
+                OPERATOR.CONTAINS,
+            ),
+            ExpeditionStyle(),
+        ]
+    ),
+    Show(
+        [
+            MultiBaseType(["Expedition Logbook", "Shattered Triskelion"]),
+            ExpeditionStyle(),
+        ]
     ),
 ]

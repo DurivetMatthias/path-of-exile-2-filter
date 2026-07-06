@@ -5,48 +5,43 @@ from app.conditions import *
 from app.categories import *
 
 shared_config = {
-    # Tiered currency
-    CURRENCY.TRANSMUTATION: TIER.RARE,
-    CURRENCY.GREATER_TRANSMUTATION: TIER.LEGENDARY,
-    CURRENCY.PERFECT_TRANSMUTATION: TIER.LEGENDARY,
-    CURRENCY.AUGMENTATION: TIER.RARE,
-    CURRENCY.GREATER_AUGMENTATION: TIER.LEGENDARY,
-    CURRENCY.PERFECT_AUGMENTATION: TIER.LEGENDARY,
-    CURRENCY.REGAL: TIER.EPIC,
-    CURRENCY.GREATER_REGAL: TIER.LEGENDARY,
-    CURRENCY.GREATER_REGAL: TIER.LEGENDARY,
-    CURRENCY.PERFECT_REGAL: TIER.LEGENDARY,
-    CURRENCY.EXALTED: TIER.EPIC,
-    CURRENCY.GREATER_EXALTED: TIER.LEGENDARY,
-    CURRENCY.PERFECT_EXALTED: TIER.LEGENDARY,
-    CURRENCY.CHAOS: TIER.EPIC,
-    CURRENCY.GREATER_CHAOS: TIER.LEGENDARY,
-    CURRENCY.PERFECT_CHAOS: TIER.LEGENDARY,
+    "Orb of Transmutation": TIER.RARE,
+    "Greater Orb of Transmutation": TIER.EPIC,
+    "Perfect Orb of Transmutation": TIER.LEGENDARY,
+    "Orb of Augmentation": TIER.RARE,
+    "Greater Orb of Augmentation": TIER.EPIC,
+    "Perfect Orb of Augmentation": TIER.LEGENDARY,
+    "Regal Orb": TIER.EPIC,
+    "Greater Regal Orb": TIER.LEGENDARY,
+    "Perfect Regal Orb": TIER.LEGENDARY,
+    "Exalted Orb": TIER.EPIC,
+    "Greater Exalted Orb": TIER.LEGENDARY,
+    "Perfect Exalted Orb": TIER.LEGENDARY,
+    "Chaos Orb": TIER.EPIC,
+    "Greater Chaos Orb": TIER.LEGENDARY,
+    "Perfect Chaos Orb": TIER.LEGENDARY,
+    "Orb of Alchemy": TIER.EPIC,
+    "Vaal Orb": TIER.EPIC,
     # Shard
-    CURRENCY.CHANCE_SHARD: TIER.EPIC,
-    CURRENCY.REGAL_SHARD: TIER.COMMON,
-    CURRENCY.ARTIFICERS_SHARD: TIER.COMMON,
+    "Chance Shard": TIER.EPIC,
     # quality
-    CURRENCY.ARTIFICER: TIER.RARE,
-    CURRENCY.GEMCUTTER: TIER.EPIC,
-    CURRENCY.ARCANIST: TIER.COMMON,
-    CURRENCY.ARMOURER: TIER.COMMON,
-    CURRENCY.BLACKSMITH: TIER.COMMON,
-    CURRENCY.GLASSBLOWER: TIER.COMMON,
+    "Artificer's Orb": TIER.RARE,
+    "Gemcutter's Prism": TIER.EPIC,
+    # "Arcanist's Etcher": TIER.COMMON,
+    "Armourer's Scrap": TIER.COMMON,
+    # "Blacksmith's Whetstone": TIER.COMMON,
+    "Glassblower's Bauble": TIER.COMMON,
     # Socket
-    CURRENCY.LESSER_JEWELLER: TIER.COMMON,
-    CURRENCY.GREATER_JEWELLER: TIER.LEGENDARY,
-    CURRENCY.PERFECT_JEWELLER: TIER.LEGENDARY,
-    # Other
-    CURRENCY.VAAL: TIER.EPIC,
-    CURRENCY.ALCHEMY: TIER.EPIC,
+    "Lesser Jeweller's Orb": TIER.EPIC,
+    "Greater Jeweller's Orb": TIER.LEGENDARY,
+    "Perfect Jeweller's Orb": TIER.LEGENDARY,
     # Tink
-    CURRENCY.CHANCE: TIER.LEGENDARY,
-    CURRENCY.DIVINE: TIER.LEGENDARY,
-    CURRENCY.MIRROR: TIER.LEGENDARY,
-    CURRENCY.HINEKORA: TIER.LEGENDARY,
-    CURRENCY.ANNULMENT: TIER.LEGENDARY,
-    CURRENCY.FRACTURING: TIER.LEGENDARY,
+    "Orb of Chance": TIER.LEGENDARY,
+    "Divine Orb": TIER.LEGENDARY,
+    "Orb of Annulment": TIER.LEGENDARY,
+    "Fracturing Orb": TIER.LEGENDARY,
+    "Hinekora's Lock": TIER.LEGENDARY,
+    "Mirror of Kalandra": TIER.LEGENDARY,
 }
 
 rules = []
@@ -54,8 +49,15 @@ rules.extend(
     Show([BaseType(currency), TierStyle(tier)])
     for currency, tier in shared_config.items()
 )
+rules.append(Show([BaseType("Gold"), StackSize(100), TierStyle(TIER.COMMON)]))
 rules.append(
-    Show([AreaLevel(65), MultiBaseType([CURRENCY.WISDOM]), TierStyle(TIER.COMMON)])
+    Show(
+        [
+            AreaLevel(65, OPERATOR.LT),
+            MultiBaseType(["Scroll of Wisdom"]),
+            TierStyle(TIER.COMMON),
+        ]
+    )
 )
 rules.append(
     Hide(
@@ -63,16 +65,16 @@ rules.append(
             MultiBaseType(
                 [
                     "Gold",
-                    # CURRENCY.WISDOM,
-                    # CURRENCY.REGAL_SHARD,
-                    # CURRENCY.LESSER_JEWELLER,
-                    # CURRENCY.ARCANIST,
-                    # CURRENCY.ARTIFICER,
-                    # CURRENCY.BLACKSMITH,
-                    # CURRENCY.ARMOURER,
-                    # CURRENCY.TRANSMUTATION,
-                    # CURRENCY.AUGMENTATION,
-                    # CURRENCY.REGAL,
+                    # "Regal Shard",
+                    # "Scroll of Wisdom",
+                    # "Lesser Jeweller's Orb",
+                    # "Greater Jeweller's Orb",
+                    # "Blacksmith's Whetstone",
+                    # "Arcanist's Etcher",
+                    # "Artificer's Orb",
+                    # "Gemcutter's Prism",
+                    # "Armourer's Scrap",
+                    # "Glassblower's Bauble",
                 ]
             )
         ]

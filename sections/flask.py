@@ -5,35 +5,40 @@ from app.conditions import *
 from app.categories import *
 
 rules = [
-    # Flask
     Show(
         [
-            AreaLevel(65, OPERATOR.LTE),
-            MultiClass([FLASK.LIFE, FLASK.MANA]),
+            AreaLevel(65, OPERATOR.LT),
+            MultiClass(["Life Flasks", "Mana Flasks", "Charms"]),
             TierStyle(TIER.COMMON),
         ]
     ),
     Show(
         [
             Rarity(RARITY.NORMAL),
-            MultiBaseType(["Ultimate Mana Flask", "Ultimate Life Flask"]),
+            ItemLevel(81),
+            MultiBaseType(
+                [
+                    "Ultimate Mana Flask",
+                    "Ultimate Life Flask",
+                ]
+            ),
             TierStyle(TIER.COMMON),
         ]
     ),
-    # Charm
     Show(
         [
-            AreaLevel(65, OPERATOR.LTE),
-            Class(FLASK.CHARM),
+            MultiBaseType(
+                [
+                    "Thawing Charm",
+                    "Silver Charm",
+                    "Golden Charm",
+                    "Staunching Charm",
+                    "Dousing Charm",
+                    "Antidote Charm",
+                ]
+            ),
             TierStyle(TIER.COMMON),
         ]
     ),
-    Show(
-        [
-            Rarity(RARITY.NORMAL),
-            MultiBaseType(["Thawing Charm", "Silver Charm", "Golden Charm"]),
-            TierStyle(TIER.COMMON),
-        ]
-    ),
-    Hide([MultiClass([FLASK.LIFE, FLASK.MANA, FLASK.CHARM])]),
+    Hide([MultiClass(["Life Flasks", "Mana Flasks", "Charms"])]),
 ]

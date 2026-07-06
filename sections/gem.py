@@ -7,27 +7,28 @@ from app.categories import *
 rules = [
     Show(
         [
-            MultiClass(
-                [
-                    GEM.SKILL,
-                    GEM.SUPPORT,
-                    GEM.SPIRIT,
-                ]
-            ),
+            MultiClass(["Uncut Skill Gems", "Uncut Spirit Gems", "Uncut Support Gems"]),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show(
+        [
+            MultiClass(["Uncut Support Gems"]),
+            BaseType("Level 5", operator=OPERATOR.CONTAINS),
             TierStyle(TIER.COMMON),
         ]
     ),
     # 19+ uncut gems
     Show(
         [
-            MultiClass([GEM.SKILL, GEM.SPIRIT]),
+            MultiClass(["Uncut Skill Gems", "Uncut Spirit Gems"]),
             BaseType("Level 19", operator=OPERATOR.CONTAINS),
             TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show(
         [
-            MultiClass([GEM.SKILL, GEM.SPIRIT]),
+            MultiClass(["Uncut Skill Gems", "Uncut Spirit Gems"]),
             BaseType("Level 20", operator=OPERATOR.CONTAINS),
             TierStyle(TIER.LEGENDARY),
         ]
@@ -37,6 +38,17 @@ rules = [
         [
             Class("Support Gems"),
             TierStyle(TIER.LEGENDARY),
+        ]
+    ),
+    Hide(
+        [
+            MultiClass(
+                [
+                    "Uncut Skill Gems",
+                    "Uncut Spirit Gems",
+                    "Uncut Support Gems",
+                ]
+            )
         ]
     ),
 ]
