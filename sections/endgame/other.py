@@ -6,8 +6,8 @@ from app.styles import *
 
 rules = [
     # Quest items
-    Show([Class("Quest Items"), TierStyle(TIER.COMMON)]),
-    Show([Class("Instance Local Items"), TierStyle(TIER.COMMON)]),
+    Show([Class("Quest Items"), TierStyle(TIER.EPIC)]),
+    Show([Class("Instance Local Items"), TierStyle(TIER.EPIC)]),
     # Custom Styles
     Show([Class("Omen"), RitualStyle()]),
     Show(

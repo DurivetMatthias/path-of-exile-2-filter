@@ -64,7 +64,7 @@ rules.append(
         [
             AreaLevel(15, OPERATOR.LTE),
             BaseType("Gold"),
-            TierStyle(TIER.COMMON),
+            TierStyle(TIER.EPIC),
         ]
     )
 )
@@ -73,7 +73,7 @@ rules.append(
         [
             BaseType("Gold"),
             StackSize(100),
-            TierStyle(TIER.COMMON),
+            TierStyle(TIER.EPIC),  # TODO add drop sound for specific areas
         ]
     )
 )

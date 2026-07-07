@@ -77,7 +77,7 @@ rules = [
     ),
     Show(
         [
-            MultiBaseType("Soldier Cuirass", "Warlord Cuirass"),
+            MultiBaseType(["Soldier Cuirass", "Warlord Cuirass"]),
             # Class("Body Armours"),
             # PureArmour(),
             Rarity(RARITY.MAGIC, OPERATOR.LTE),
@@ -108,6 +108,7 @@ rules = [
             #         "Structured Hammer",
             #     ]
             # ),
+            ItemLevel(81),
             Class("One Hand Maces"),
             Rarity(RARITY.MAGIC, OPERATOR.LTE),
             TierStyle(TIER.LEGENDARY),

@@ -11,9 +11,7 @@ rules = [
     # Custom Styles
     Show(
         [
-            MultiBaseType(
-                ["Gnawed Collarbone", "Gnawed Jawbone", "Gnawed Rib", "Gnawed Cranium"]
-            ),
+            MultiBaseType(["Gnawed Collarbone", "Gnawed Jawbone", "Gnawed Rib"]),
             AbyssStyle(),
         ]
     ),
@@ -54,6 +52,7 @@ rules = [
     # ===========================
     Show(
         [
+            Class("Stackable Currency"),
             MultiBaseType(
                 [
                     "Alloy",

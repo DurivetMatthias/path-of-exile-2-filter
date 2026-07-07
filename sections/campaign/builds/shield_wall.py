@@ -8,7 +8,7 @@ rules = [
     Show(
         [
             AreaLevel(5),
-            TierStyle(TIER.COMMON),
+            TierStyle(TIER.EPIC),
         ]
     ),
     Show(
